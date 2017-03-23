@@ -1,0 +1,2869 @@
+<!DOCTYPE html>
+<!-- saved from url=(0024)http://swf.com.tw/?p=693 -->
+<html class=" js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths" lang="zh-TW"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="pingback" href="http://swf.com.tw/xmlrpc.php">
+
+<title>HC-05與HC-06藍牙模組補充說明（一） - 網昱多媒體</title>
+
+<!-- This site is optimized with the Yoast SEO plugin v4.5 - https://yoast.com/wordpress/plugins/seo/ -->
+<link rel="canonical" href="http://swf.com.tw/?p=693">
+<!-- / Yoast SEO plugin. -->
+
+<link rel="dns-prefetch" href="http://fonts.googleapis.com/">
+<link rel="dns-prefetch" href="http://s.w.org/">
+<link rel="alternate" type="application/rss+xml" title="訂閱 網昱多媒體 »" href="http://swf.com.tw/?feed=rss2">
+<link rel="alternate" type="application/rss+xml" title="訂閱 網昱多媒體 » 迴響" href="http://swf.com.tw/?feed=comments-rss2">
+<link rel="alternate" type="application/rss+xml" title="訂閱 網昱多媒體 » HC-05與HC-06藍牙模組補充說明（一） 迴響" href="http://swf.com.tw/?feed=rss2&amp;p=693">
+		<script async="" src="./HC-05與HC-06藍牙模組補充說明（一） - 網昱多媒體_files/analytics.js.下載"></script><script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.2.1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.2.1\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/swf.com.tw\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.7.3"}};
+			!function(a,b,c){function d(a){var b,c,d,e,f=String.fromCharCode;if(!k||!k.fillText)return!1;switch(k.clearRect(0,0,j.width,j.height),k.textBaseline="top",k.font="600 32px Arial",a){case"flag":return k.fillText(f(55356,56826,55356,56819),0,0),!(j.toDataURL().length<3e3)&&(k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57331,65039,8205,55356,57096),0,0),b=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57331,55356,57096),0,0),c=j.toDataURL(),b!==c);case"emoji4":return k.fillText(f(55357,56425,55356,57341,8205,55357,56507),0,0),d=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55357,56425,55356,57341,55357,56507),0,0),e=j.toDataURL(),d!==e}return!1}function e(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i,j=b.createElement("canvas"),k=j.getContext&&j.getContext("2d");for(i=Array("flag","emoji4"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script><script src="./HC-05與HC-06藍牙模組補充說明（一） - 網昱多媒體_files/wp-emoji-release.min.js.下載" type="text/javascript" defer=""></script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel="stylesheet" id="crayon-css" href="./HC-05與HC-06藍牙模組補充說明（一） - 網昱多媒體_files/crayon.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="crayon-theme-classic-css" href="./HC-05與HC-06藍牙模組補充說明（一） - 網昱多媒體_files/classic.css" type="text/css" media="all">
+<link rel="stylesheet" id="crayon-font-monaco-css" href="./HC-05與HC-06藍牙模組補充說明（一） - 網昱多媒體_files/monaco.css" type="text/css" media="all">
+<link rel="stylesheet" id="juiz_sps_styles-css" href="./HC-05與HC-06藍牙模組補充說明（一） - 網昱多媒體_files/juiz-social-post-sharer-1.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="sparkling-bootstrap-css" href="./HC-05與HC-06藍牙模組補充說明（一） - 網昱多媒體_files/bootstrap.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="sparkling-icons-css" href="./HC-05與HC-06藍牙模組補充說明（一） - 網昱多媒體_files/font-awesome.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="sparkling-fonts-css" href="./HC-05與HC-06藍牙模組補充說明（一） - 網昱多媒體_files/css" type="text/css" media="all">
+<link rel="stylesheet" id="sparkling-style-css" href="./HC-05與HC-06藍牙模組補充說明（一） - 網昱多媒體_files/style.css" type="text/css" media="all">
+<link rel="stylesheet" id="gabcaptcha2_stylesheet_std-css" href="./HC-05與HC-06藍牙模組補充說明（一） - 網昱多媒體_files/style(1).css" type="text/css" media="all">
+<link rel="stylesheet" id="gabcaptcha2_stylesheet_css-css" href="./HC-05與HC-06藍牙模組補充說明（一） - 網昱多媒體_files/emphasis.php" type="text/css" media="all">
+<script type="text/javascript" src="./HC-05與HC-06藍牙模組補充說明（一） - 網昱多媒體_files/jquery.js.下載"></script>
+<script type="text/javascript" src="./HC-05與HC-06藍牙模組補充說明（一） - 網昱多媒體_files/jquery-migrate.min.js.下載"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var CrayonSyntaxSettings = {"version":"_2.7.2_beta","is_admin":"0","ajaxurl":"http:\/\/swf.com.tw\/wp-admin\/admin-ajax.php","prefix":"crayon-","setting":"crayon-setting","selected":"crayon-setting-selected","changed":"crayon-setting-changed","special":"crayon-setting-special","orig_value":"data-orig-value","debug":""};
+var CrayonSyntaxStrings = {"copy":"\u4f7f\u7528 %s \u62f7\u8c9d\uff0c\u4f7f\u7528 %s \u7c98\u8cbc\u3002","minimize":"\u9ede\u64ca\u5c55\u958b\u4ee3\u78bc"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./HC-05與HC-06藍牙模組補充說明（一） - 網昱多媒體_files/crayon.min.js.下載"></script>
+<script type="text/javascript" src="./HC-05與HC-06藍牙模組補充說明（一） - 網昱多媒體_files/modernizr.min.js.下載"></script>
+<script type="text/javascript" src="./HC-05與HC-06藍牙模組補充說明（一） - 網昱多媒體_files/bootstrap.min.js.下載"></script>
+<script type="text/javascript" src="./HC-05與HC-06藍牙模組補充說明（一） - 網昱多媒體_files/functions.min.js.下載"></script>
+<link rel="https://api.w.org/" href="http://swf.com.tw/?rest_route=/">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://swf.com.tw/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://swf.com.tw/wp-includes/wlwmanifest.xml"> 
+<meta name="generator" content="WordPress 4.7.3">
+<link rel="shortlink" href="http://swf.com.tw/?p=693">
+<link rel="alternate" type="application/json+oembed" href="http://swf.com.tw/?rest_route=%2Foembed%2F1.0%2Fembed&amp;url=http%3A%2F%2Fswf.com.tw%2F%3Fp%3D693">
+<link rel="alternate" type="text/xml+oembed" href="http://swf.com.tw/?rest_route=%2Foembed%2F1.0%2Fembed&amp;url=http%3A%2F%2Fswf.com.tw%2F%3Fp%3D693&amp;format=xml">
+<style type="text/css"></style>
+</head>
+
+<body class="post-template-default single single-post postid-693 single-format-standard">
+<a class="sr-only sr-only-focusable" href="http://swf.com.tw/?p=693#content">Skip to main content</a>
+<div id="page" class="hfeed site">
+
+	<header id="masthead" class="site-header" role="banner">
+		<nav class="navbar navbar-default " role="navigation">
+			<div class="container">
+				<div class="row">
+					<div class="site-navigation-inner col-sm-12">
+						<div class="navbar-header">
+							<button type="button" class="btn navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+								<span class="sr-only">Toggle navigation</span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button>
+
+							
+							<div id="logo">
+								<a href="http://swf.com.tw/"><img src="./HC-05與HC-06藍牙模組補充說明（一） - 網昱多媒體_files/logo_internet_plus-1.png" height="137" width="253" alt="網昱多媒體"></a>
+							</div><!-- end of #logo -->
+
+							
+							
+						</div>
+						<div class="collapse navbar-collapse navbar-ex1-collapse"><ul id="menu-main" class="nav navbar-nav"><li id="menu-item-878" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-878"><a title="超圖解物聯網IoT實作入門" href="http://swf.com.tw/?p=874">超圖解物聯網IoT實作入門</a></li>
+<li id="menu-item-991" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-991"><a title="超圖解Arduino 互動設計入門" href="http://swf.com.tw/?p=986">超圖解Arduino 互動設計入門</a></li>
+<li id="menu-item-825" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-825"><a title="硬體與DIY" href="http://swf.com.tw/?cat=15">硬體與DIY</a></li>
+</ul></div>					</div>
+				</div>
+			</div>
+		</nav><!-- .site-navigation -->
+	</header><!-- #masthead -->
+
+	<div id="content" class="site-content">
+
+		<div class="top-section">
+								</div>
+
+		<div class="container main-content-area">
+            			<div class="row side-pull-left">
+				<div class="main-content-inner col-sm-12 col-md-8">
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main" role="main">
+
+		
+			
+<article id="post-693" class="post-693 post type-post status-publish format-standard hentry category-3 category-diy tag-arduino tag--bluetooth">
+		<div class="post-inner-content">
+		<header class="entry-header page-header">
+
+			<h1 class="entry-title ">HC-05與HC-06藍牙模組補充說明（一）</h1>
+
+			<div class="entry-meta">
+				<span class="posted-on"><i class="fa fa-calendar"></i> <a href="http://swf.com.tw/?p=693" rel="bookmark"><time class="entry-date published" datetime="2014-11-01T23:13:32+00:00">2014/11/01</time><time class="updated" datetime="2014-11-13T20:31:35+00:00">2014/11/13</time></a></span><span class="byline"> <i class="fa fa-user"></i> <span class="author vcard"><a class="url fn n" href="http://swf.com.tw/?author=1">cubie</a></span></span>
+								<span class="cat-links"><i class="fa fa-folder-open-o"></i>
+					 <a href="http://swf.com.tw/?cat=3" rel="category">教學文件</a>, <a href="http://swf.com.tw/?cat=15" rel="category">硬體與DIY</a>				</span>
+								
+			</div><!-- .entry-meta -->
+		</header><!-- .entry-header -->
+
+		<div class="entry-content">
+			
+<div class="juiz_sps_links  counters_both juiz_sps_displayed_top">
+<p class="screen-reader-text juiz_sps_maybe_hidden_text">Share the post "HC-05與HC-06藍牙模組補充說明（一）"</p>
+
+	<ul class="juiz_sps_links_list"><li class="juiz_sps_item juiz_sps_link_facebook"><a href="https://www.facebook.com/sharer/sharer.php?u=http://swf.com.tw/?p=693" rel="nofollow" title="Share this article on Facebook"><span class="juiz_sps_icon jsps-facebook"></span><span class="juiz_sps_network_name">Facebook</span></a></li><li class="juiz_sps_item juiz_sps_link_google"><a href="https://plus.google.com/share?url=http://swf.com.tw/?p=693" rel="nofollow" title="Share this article on Google+"><span class="juiz_sps_icon jsps-google"></span><span class="juiz_sps_network_name">Google+</span></a></li><li class="juiz_sps_item juiz_sps_link_stumbleupon"><a href="https://www.stumbleupon.com/badge/?url=http://swf.com.tw/?p=693" rel="nofollow" title="Share this article on StumbleUpon"><span class="juiz_sps_icon jsps-stumbleupon"></span><span class="juiz_sps_network_name">StumbleUpon</span></a></li><li class="juiz_sps_item juiz_sps_link_weibo"><a href="http://service.weibo.com/share/share.php?title=HC-05%E8%88%87HC-06%E8%97%8D%E7%89%99%E6%A8%A1%E7%B5%84%E8%A3%9C%E5%85%85%E8%AA%AA%E6%98%8E%EF%BC%88%E4%B8%80%EF%BC%89+%3A+%E6%9C%AC%E6%96%87%E6%97%A8%E5%9C%A8%E8%A3%9C%E5%85%85%E3%80%8A%E8%B6%85%E5%9C%96%E8%A7%A3Arduino%E4%BA%92%E5%8B%95%E8%A8%AD%E8%A8%88%E5%85%A5%E9%96%80%E3%80%8B%E7%AC%AC14%E7%AB%A0%E3%80%8C%E8%97%8D%E7%89%99%E5%BA%8F%E5%88%97%E5%9F%A0%E6%A8%A1%E7%B5%84%E3%80%8D%EF%BC%8C%E8%AA%AA%E6%98%8E%E5%B8%B8%E8%A6%8B%E7%9A%84HC-05%E5%92%8CHC-06%E9%80%99%E5%85%A9%E6%AC%BE%E8%97%8D%E7%89%99%E6%A8%A1%E7%B5%84%E7%9A%84%E5%B7%AE%E7%95%B0%E3%80%82+%0D%0A%E5%B8%B8%E8%A6%8B%E7%9A%84%E5%85%A9%E7%A8%AE%E6%94%AF%E6%8F%B4SPP%EF%BC%88Serial+Port&amp;url=http://swf.com.tw/?p=693" rel="nofollow" title="Share this article on Weibo"><span class="juiz_sps_icon jsps-weibo"></span><span class="juiz_sps_network_name">Weibo</span></a></li><li class="juiz_sps_item juiz_sps_link_mail"><a href="mailto:?subject=%E7%B6%B2%E9%A0%81%E5%88%86%E4%BA%AB&amp;body=%E8%B7%9F%E4%BD%A0%E5%88%86%E4%BA%AB%E9%80%99%E5%80%8B%E7%B6%B2%E9%A0%81:http://swf.com.tw/?p=693" rel="nofollow" title="Share this article with a friend (email)"><span class="juiz_sps_icon jsps-mail"></span><span class="juiz_sps_network_name">E-mail</span></a></li></ul>
+	</div>
+
+<p>本文旨在補充《<a href="http://swf.com.tw/?p=622" target="_blank">超圖解Arduino互動設計入門</a>》第14章「藍牙序列埠模組」，說明常見的HC-05和HC-06這兩款藍牙模組的差異。 </p>
+<p>常見的兩種支援<strong>SPP（Serial Port Profile，序列埠規範）</strong>的藍牙模組： </p>
+<ul>
+<li><strong>HC-05</strong>：主∕從（master/slave）一體型，出廠預設通常是「從端」模式，但是能自行透過AT命令修改（參閱「<a href="http://swf.com.tw/?p=335" target="_blank">執行AT命令（AT-command）修改藍牙模組的資料傳輸速率</a>」，以及下一篇貼文說明）。 </li>
+<li><strong>HC-06</strong>：主控端或從端模式，出廠前就設定好，不能更改；市面上販售的通常是「從端」模式。 </li>
+</ul>
+<h2>HC-05與HC-06藍牙序列埠通訊模組</h2>
+<p><strong>HC-05和HC-06的硬體相同</strong>，都採用英國劍橋的<strong>CSR (Cambridge Silicon Radio) 公司</strong>的BC417143晶片，支援<strong>藍牙2.1+EDR規範</strong>，只是晶片內部的韌體不同。CSR是全球市佔率最高的藍牙通訊晶片廠，2014年10月中旬，全球手機晶片龍頭<a href="http://www.utsandiego.com/news/2014/oct/15/Qualcomm-CSR-Broadcom-acquisition-bluetooth/" target="_blank">高通（Qualcomm）同意以25億美元現金，購併CSR</a>，以強化該公司在<strong>物聯網（Internet of Things）</strong>的布局。韓國<a href="http://www.bbc.com/news/technology-18871588" target="_blank">三星也於2012年花費3.1億美元</a>，取得CSR公司的藍牙、WiFi和GPS定位等技術專利。 </p>
+<p><strong>HC-05模組</strong>的外觀與主要接腳如下： </p>
+<p align="center"><img src="./HC-05與HC-06藍牙模組補充說明（一） - 網昱多媒體_files/hc-05-module-pins.png" width="529" height="224" alt="HC-05模組的外觀與主要接腳"></p>
+<h2>附帶底板的HC-05和HC-06藍牙序列埠通訊模組 </h2>
+<p>基本的藍牙序列通訊模組沒有引出接腳，而是在印刷電路板的四周留下郵票般的齒孔，方便焊接。 </p>
+<p>若不想動手焊接，可以選購附帶底板的模組。這個底板附帶直流電壓轉換IC，方便<strong>連接3.6V~6V的電源</strong>。 </p>
+<p>附帶底板的<strong>HC-05藍牙模組</strong>外觀與接腳如下：</p>
+<p align="center"><img src="./HC-05與HC-06藍牙模組補充說明（一） - 網昱多媒體_files/hc-05-bluetooth-module.png" width="549" height="186" alt="附帶底板的HC-05藍牙模組外觀與接腳"></p>
+<p><strong>「命令回應模式」接腳（通常標示成“KEY”或“EN”），用於啟動AT命令模式</strong>，調整藍牙模組的設定（例如，調整序列埠的傳輸速率、修改模組的名稱、修改配對密碼…等等）。 </p>
+<p>附帶底板的<strong>HC-06藍牙模組</strong>的外觀與接腳： </p>
+<p align="center"><img src="./HC-05與HC-06藍牙模組補充說明（一） - 網昱多媒體_files/hc-06-bluetooth-module.png" width="531" height="182" alt="附帶底板的HC-06藍牙模組的外觀與接腳"></p>
+<p>實際上，因為模組生產廠商不同，並非所有附帶底板的HC-05和HC-06模組都像上圖一樣。有些模組只有4支引腳，在個人的應用和實驗場合，4支引腳足敷使用，只是不方便修改模組的參數，比較不建議購買： </p>
+<p align="center"><img src="./HC-05與HC-06藍牙模組補充說明（一） - 網昱多媒體_files/hc-05_module_4pins.png" width="513" height="141" alt="只有4支引腳的藍牙模組"></p>
+<p>並非所有6支引腳的藍牙模組的規格都相同。下圖是不同廠商的HC-05和HC-06模組的正面外觀： </p>
+<p align="center"><img src="./HC-05與HC-06藍牙模組補充說明（一） - 網昱多媒體_files/hc-05_hc-06_front.jpg" width="576" height="385" alt="不同廠商的HC-05和HC-06模組的正面照片"></p>
+<p>從上面的照片可知，單憑焊接點，無法判斷模組類型（但<strong>HC-05模組底下的記憶體晶片有打勾勾記號</strong>），也無法得知實際引出的接腳是哪幾個，必須看電路圖或者用電錶測量。這是背面： </p>
+<p align="center"><img src="./HC-05與HC-06藍牙模組補充說明（一） - 網昱多媒體_files/hc-05_hc-06_back.jpg" width="555" height="426" alt="不同廠商的HC-05和HC-06模組的背面照片"></p>
+<h2>藍牙模組選購要點 </h2>
+<p><strong>市面上的藍牙裝置通常都屬於“slave（從端）”設備</strong>，像藍牙滑鼠∕鍵盤、藍牙GPS、藍牙遙控玩具…等等。 </p>
+<p>一般的Arduino藍牙遙控和通訊實驗，也都是用「從端」模式，所以HC-06模組足以應付大多數需求。但如果HC-05和HC-06模組的價格差不多，那就買HC-05。 </p>
+<p>HC-05和HC-06的主要差異在於主、從模式的設定，以及設置模組參數的AT命令的支援程度。<strong>HC-05通常支援30多道AT命令，HC-06只支援少數AT命令</strong>，但實務上會用到的AT命令通常也只有兩、三個（請參閱下一篇貼文說明）。 </p>
+<p>若要採購HC-05，請選擇有引出「命令回應模式」接腳的模組，方便執行AT命令。 </p>
+<p>不同藍牙模組的引腳和韌體可能不太一樣，購買時，務必跟廠商索取data sheet（規格說明書，含AT命令手冊，有些會附帶底板的電路圖）。 </p>
+<p><strong>Bluetooth 4.0具備藍牙低功耗(Bluetooth Low Energy, BLE)模式</strong>，耗電量低，但電腦、手機和平板等裝置的支援、普及程度，不及2.1版。如果你確認你的電腦和手機都支援藍牙4.0，那就可以選購藍牙4.0的序列通訊模組。 </p>
+<p>不管是HC-05, HC-06還是藍牙4.0，對Arduino都沒有影響，控制程式都一樣，實際接線也只用到4條線：<strong>電源、接地、傳送（TxD）和接收（RxD）</strong>。電路接線說明，請參閱下一篇貼文。</p>
+<h2>延伸閱讀</h2>
+<ul>
+<li><a href="http://swf.com.tw/?p=705">HC-05與HC-06藍牙模組補充說明（二）：連接電路</a></li>
+<li><a href="http://swf.com.tw/?p=335" target="_blank">執行AT命令（AT-command）修改藍牙模組的資料傳輸速率</a></li>
+<li><a href="http://swf.com.tw/?p=499" target="_blank">使用CoolTerm建立藍牙序列埠連線：以Mac OS X為例</a></li>
+<li><a href="http://swf.com.tw/?p=679" target="_blank">使用App Inventor 2製作的機器昆蟲藍牙控制器之小小改版</a></li>
+<li><a href="http://swf.com.tw/?p=640">用樂高積木履帶工程車拼湊Arduino的移動平台（未完成）</a></li>
+</ul>
+					</div><!-- .entry-content -->
+
+		<footer class="entry-meta">
+
+	    		      <!-- tags -->
+	      <div class="tagcloud" style="display: block;">
+
+	          <a href="http://swf.com.tw/?tag=arduino">arduino</a> <a href="http://swf.com.tw/?tag=%e8%97%8d%e7%89%99-bluetooth">藍牙 Bluetooth</a> 
+	      </div>
+	      <!-- end tags -->
+	      
+		</footer><!-- .entry-meta -->
+	</div>
+
+	
+</article><!-- #post-## -->
+
+			
+<div id="comments" class="comments-area">
+
+	        
+			<h2 class="comments-title">
+			89 thoughts on “<span>HC-05與HC-06藍牙模組補充說明（一）</span>”		</h2>
+
+		
+		<ol class="comment-list">
+					<li id="comment-868826" class="comment even thread-even depth-1 parent">
+			<article id="div-comment-868826" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="./HC-05與HC-06藍牙模組補充說明（一） - 網昱多媒體_files/33d313739fc83958a415e2e544d143fa" srcset="http://0.gravatar.com/avatar/33d313739fc83958a415e2e544d143fa?s=120&amp;d=retro&amp;r=g 2x" class="avatar avatar-60 photo" height="60" width="60">						<b class="fn">brchiu</b> <span class="says">說：</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://swf.com.tw/?p=693#comment-868826">
+							<time datetime="2014-11-13T20:07:22+00:00">
+								2014/11/13 at 8:07 下午							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>您好，<br>
+您文中「2014年10月中旬，全球手機晶片龍頭博通（Qualcomm）同意以25億美元現金，購併CSR」，<br>
+這句話有一點小錯誤，Qualcomm 的一般是翻譯作「高通」，而「博通」是另一家晶片大廠 Broadcom，<br>
+供您參考。</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel="nofollow" class="comment-reply-link btn btn-sm btn-default" href="http://swf.com.tw/?p=693&amp;replytocom=868826#respond" onclick="return addComment.moveForm( &quot;div-comment-868826&quot;, &quot;868826&quot;, &quot;respond&quot;, &quot;693&quot; )" aria-label="回覆 brchiu" style="display: inline;">回覆</a></div>			</article><!-- .comment-body -->
+<ol class="children">
+		<li id="comment-868831" class="comment byuser comment-author-administrator bypostauthor odd alt depth-2">
+			<article id="div-comment-868831" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="./HC-05與HC-06藍牙模組補充說明（一） - 網昱多媒體_files/3ded6f1f06d42ba142f7e7ce17855b79" srcset="http://0.gravatar.com/avatar/3ded6f1f06d42ba142f7e7ce17855b79?s=120&amp;d=retro&amp;r=g 2x" class="avatar avatar-60 photo" height="60" width="60">						<b class="fn"><a href="http://swf.com.tw/" rel="external nofollow" class="url">cubie</a></b> <span class="says">說：</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://swf.com.tw/?p=693#comment-868831">
+							<time datetime="2014-11-13T20:32:16+00:00">
+								2014/11/13 at 8:32 下午							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>hi chiu:</p>
+<p>非常感謝揪錯～已更正！</p>
+<p>thanks,<br>
+jeffrey</p>
+				</div><!-- .comment-content -->
+
+							</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+		<li id="comment-876429" class="comment even thread-odd thread-alt depth-1 parent">
+			<article id="div-comment-876429" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="./HC-05與HC-06藍牙模組補充說明（一） - 網昱多媒體_files/62e6f443551bacef89a72c14b6b9928a" srcset="http://0.gravatar.com/avatar/62e6f443551bacef89a72c14b6b9928a?s=120&amp;d=retro&amp;r=g 2x" class="avatar avatar-60 photo" height="60" width="60">						<b class="fn">chen hy</b> <span class="says">說：</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://swf.com.tw/?p=693#comment-876429">
+							<time datetime="2014-12-10T21:13:06+00:00">
+								2014/12/10 at 9:13 下午							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>你好 我有購買你的書籍互動設計入門2，寫的很好清晰易懂<br>
+只是藍牙這章節一直卡住不是很能了解整個流程。</p>
+<p>想請問 ，我買了CH-06的藍牙模組接上Arduino後，是否我的Mac(10.9.5，2009出產) 設定好藍牙的配對後， 就能夠直接與arduino溝通？ 也是說不用再插usb 就能夠將程式碼讀入或燒入？</p>
+<p>我目前是將你書籍中的光碟14-1檔案燒入至arduino, 腳位藍牙密碼都已設定好，下載CoolTermMac130.zip（其它的版本無法開啟）這樣藍牙還是無法連接上，他跑出的畫面如下</p>
+<p><a href="https://www.dropbox.com/s/58sddk2vqzcfp1r/%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202014-12-10%20%E4%B8%8B%E5%8D%888.52.48.png?dl=0" rel="nofollow">https://www.dropbox.com/s/58sddk2vqzcfp1r/%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202014-12-10%20%E4%B8%8B%E5%8D%888.52.48.png?dl=0</a></p>
+<p><a href="https://www.dropbox.com/s/rqa42veu9po24na/%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202014-12-10%20%E4%B8%8B%E5%8D%888.58.31.png?dl=0" rel="nofollow">https://www.dropbox.com/s/rqa42veu9po24na/%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7%202014-12-10%20%E4%B8%8B%E5%8D%888.58.31.png?dl=0</a></p>
+<p>不知道能不能請你幫忙看一下喔</p>
+<p>謝謝</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel="nofollow" class="comment-reply-link btn btn-sm btn-default" href="http://swf.com.tw/?p=693&amp;replytocom=876429#respond" onclick="return addComment.moveForm( &quot;div-comment-876429&quot;, &quot;876429&quot;, &quot;respond&quot;, &quot;693&quot; )" aria-label="回覆 chen hy" style="display: inline;">回覆</a></div>			</article><!-- .comment-body -->
+<ol class="children">
+		<li id="comment-876463" class="comment byuser comment-author-administrator bypostauthor odd alt depth-2">
+			<article id="div-comment-876463" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="./HC-05與HC-06藍牙模組補充說明（一） - 網昱多媒體_files/3ded6f1f06d42ba142f7e7ce17855b79" srcset="http://0.gravatar.com/avatar/3ded6f1f06d42ba142f7e7ce17855b79?s=120&amp;d=retro&amp;r=g 2x" class="avatar avatar-60 photo" height="60" width="60">						<b class="fn"><a href="http://swf.com.tw/" rel="external nofollow" class="url">cubie</a></b> <span class="says">說：</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://swf.com.tw/?p=693#comment-876463">
+							<time datetime="2014-12-11T00:58:23+00:00">
+								2014/12/11 at 12:58 上午							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>只要電腦或手機平板和藍牙模組配對之後，就能透過序列埠和Arduino溝通了。</p>
+<p>不過，若要透過藍牙來上傳Arduino程式碼，需要把藍牙模組的序列埠通訊速率改成和燒錄程式的通訊速率一致，也就是115200bps。此外，為了讓Arduino控制板能在上傳程式之前維持Reset狀態，還需要在藍牙模組上焊接一點電路。</p>
+<p>Make雜誌的"<a href="http://makezine.com/projects/diy-arduino-bluetooth-programming-shield/" title="自製Arduino藍牙程式燒錄器" target="_blank" rel="nofollow">DIY Arduino Bluetooth Programming Shield</a>“這篇文章有詳細的設定步驟說明，其中的第4步驟說明修改參數HC-05模組參數所需的AT指令，第8步驟包含自動重置Arduino的電路圖。</p>
+<p>從你的CoolTerm設定畫面看來，並沒有錯誤，不知道為何連不上藍牙…不過，iOS和Android也都有序列埠通訊程式軟體，你可以在AppStore搜尋關鍵字serial terminal就能找到相關App，請試試看能不能用手機或平板連上。</p>
+<p>thanks,<br>
+jeffrey</p>
+				</div><!-- .comment-content -->
+
+							</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+		<li id="comment-876624" class="comment even thread-even depth-1 parent">
+			<article id="div-comment-876624" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="./HC-05與HC-06藍牙模組補充說明（一） - 網昱多媒體_files/62e6f443551bacef89a72c14b6b9928a" srcset="http://0.gravatar.com/avatar/62e6f443551bacef89a72c14b6b9928a?s=120&amp;d=retro&amp;r=g 2x" class="avatar avatar-60 photo" height="60" width="60">						<b class="fn">chen hy</b> <span class="says">說：</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://swf.com.tw/?p=693#comment-876624">
+							<time datetime="2014-12-11T14:58:41+00:00">
+								2014/12/11 at 2:58 下午							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>你好<br>
+謝謝你的回復<br>
+是不是我照著以下網址的步驟就能做出一個藍牙擴充板，接上arduino就能直接讀取<br>
+<a href="http://www.makezine.com.tw/make2599131456/arduino14" rel="nofollow">http://www.makezine.com.tw/make2599131456/arduino14</a></p>
+<p>這個網頁在步驟2的 CH-05線路圖上 有一個地方我看不是很懂<br>
+它的 3.3v 跟 key 的線接在一起，但我的CH-05板子 沒有3.3v 只有5v(vcc)  跟 STATUS的接腳<br>
+這個部分是把 STATUS 跟key接在一起嗎<br>
+再請你幫忙看一下</p>
+<p>謝謝<br>
+感激不盡</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel="nofollow" class="comment-reply-link btn btn-sm btn-default" href="http://swf.com.tw/?p=693&amp;replytocom=876624#respond" onclick="return addComment.moveForm( &quot;div-comment-876624&quot;, &quot;876624&quot;, &quot;respond&quot;, &quot;693&quot; )" aria-label="回覆 chen hy" style="display: inline;">回覆</a></div>			</article><!-- .comment-body -->
+<ol class="children">
+		<li id="comment-876922" class="comment byuser comment-author-administrator bypostauthor odd alt depth-2">
+			<article id="div-comment-876922" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="./HC-05與HC-06藍牙模組補充說明（一） - 網昱多媒體_files/3ded6f1f06d42ba142f7e7ce17855b79" srcset="http://0.gravatar.com/avatar/3ded6f1f06d42ba142f7e7ce17855b79?s=120&amp;d=retro&amp;r=g 2x" class="avatar avatar-60 photo" height="60" width="60">						<b class="fn"><a href="http://swf.com.tw/" rel="external nofollow" class="url">cubie</a></b> <span class="says">說：</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://swf.com.tw/?p=693#comment-876922">
+							<time datetime="2014-12-12T16:19:24+00:00">
+								2014/12/12 at 4:19 下午							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>製作藍牙擴充板的說明，有提到需要透過AT命令設定藍牙模組的參數。</p>
+<p>HC-05模組進入AT命令的方式就是把34腳（key）接高電位，如果你的藍牙模組沒有預先接出KEY腳，就需要在模組通電之前，自行用導線將34腳接高電位。相關說明請參閱筆者的「<a href="http://swf.com.tw/?p=712" rel="nofollow">使用Arduino設定AT命令</a>」補充說明。</p>
+<p>have fun!<br>
+jeffrey</p>
+				</div><!-- .comment-content -->
+
+							</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+		<li id="comment-898685" class="comment even thread-odd thread-alt depth-1 parent">
+			<article id="div-comment-898685" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="./HC-05與HC-06藍牙模組補充說明（一） - 網昱多媒體_files/92f10ff736270fcaad27e3b0eb1d1f66" srcset="http://0.gravatar.com/avatar/92f10ff736270fcaad27e3b0eb1d1f66?s=120&amp;d=retro&amp;r=g 2x" class="avatar avatar-60 photo" height="60" width="60">						<b class="fn">bryan</b> <span class="says">說：</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://swf.com.tw/?p=693#comment-898685">
+							<time datetime="2015-02-07T17:50:12+00:00">
+								2015/02/07 at 5:50 下午							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>您好請問一下！我的HC-05 在MAC 上時進行配對出現問題！例如一開始他會出現HC-05 設備，我進行配對後在藍芽裝置也出現HC-05 但是過沒幾秒它就自動斷線又跳出了！請問這是哪裡有問題？？我有兩片HC-05 都是一樣狀況，配對完沒多久自動跳出！</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel="nofollow" class="comment-reply-link btn btn-sm btn-default" href="http://swf.com.tw/?p=693&amp;replytocom=898685#respond" onclick="return addComment.moveForm( &quot;div-comment-898685&quot;, &quot;898685&quot;, &quot;respond&quot;, &quot;693&quot; )" aria-label="回覆 bryan" style="display: inline;">回覆</a></div>			</article><!-- .comment-body -->
+<ol class="children">
+		<li id="comment-899006" class="comment byuser comment-author-administrator bypostauthor odd alt depth-2">
+			<article id="div-comment-899006" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="./HC-05與HC-06藍牙模組補充說明（一） - 網昱多媒體_files/3ded6f1f06d42ba142f7e7ce17855b79" srcset="http://0.gravatar.com/avatar/3ded6f1f06d42ba142f7e7ce17855b79?s=120&amp;d=retro&amp;r=g 2x" class="avatar avatar-60 photo" height="60" width="60">						<b class="fn"><a href="http://swf.com.tw/" rel="external nofollow" class="url">cubie</a></b> <span class="says">說：</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://swf.com.tw/?p=693#comment-899006">
+							<time datetime="2015-02-09T20:11:10+00:00">
+								2015/02/09 at 8:11 下午							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>hi bryan:</p>
+<p>似乎不少Mac用戶都遇過<a href="http://forum.arduino.cc/index.php?topic=188429.0" title="Mac無法跟藍牙模組配對" target="_blank" rel="nofollow">類似的問題</a>，我之前在Mac OS X 10.9.x系統上測試倒是很順利，沒遇過無故斷線的情況……你方便安裝Windows系統測試嗎？</p>
+<p>thanks,<br>
+jeffrey</p>
+				</div><!-- .comment-content -->
+
+							</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+		<li id="comment-908404" class="comment even depth-2 parent">
+			<article id="div-comment-908404" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="./HC-05與HC-06藍牙模組補充說明（一） - 網昱多媒體_files/c149f72d3f5795972600d1e3e1bc0a93" srcset="http://0.gravatar.com/avatar/c149f72d3f5795972600d1e3e1bc0a93?s=120&amp;d=retro&amp;r=g 2x" class="avatar avatar-60 photo" height="60" width="60">						<b class="fn">ifeng</b> <span class="says">說：</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://swf.com.tw/?p=693#comment-908404">
+							<time datetime="2015-06-23T00:51:42+00:00">
+								2015/06/23 at 12:51 上午							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>我也遇到相同的狀況，在藍牙配對的視窗會自動跳回未連線，但HC-05的顯示燈號不便依然是低速短暫閃爍，於是我檢查了/dev/tty.，發現裝置還是可以作用的，代表應該Mac的藍芽連接使用者介面有問題，但底層運作不受影響，供大家參考。</p>
+				</div><!-- .comment-content -->
+
+							</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+		<li id="comment-908405" class="comment byuser comment-author-administrator bypostauthor odd alt depth-2">
+			<article id="div-comment-908405" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="./HC-05與HC-06藍牙模組補充說明（一） - 網昱多媒體_files/3ded6f1f06d42ba142f7e7ce17855b79" srcset="http://0.gravatar.com/avatar/3ded6f1f06d42ba142f7e7ce17855b79?s=120&amp;d=retro&amp;r=g 2x" class="avatar avatar-60 photo" height="60" width="60">						<b class="fn"><a href="http://swf.com.tw/" rel="external nofollow" class="url">cubie</a></b> <span class="says">說：</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://swf.com.tw/?p=693#comment-908405">
+							<time datetime="2015-06-23T01:25:37+00:00">
+								2015/06/23 at 1:25 上午							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>hi ifeng:</p>
+<p>非常感謝分享！</p>
+<p>thanks,<br>
+jeffrey</p>
+				</div><!-- .comment-content -->
+
+							</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+		<li id="comment-899637" class="comment even thread-even depth-1 parent">
+			<article id="div-comment-899637" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="./HC-05與HC-06藍牙模組補充說明（一） - 網昱多媒體_files/c6b8206365d568202fa536ef35d408d8" srcset="http://0.gravatar.com/avatar/c6b8206365d568202fa536ef35d408d8?s=120&amp;d=retro&amp;r=g 2x" class="avatar avatar-60 photo" height="60" width="60">						<b class="fn">許智</b> <span class="says">說：</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://swf.com.tw/?p=693#comment-899637">
+							<time datetime="2015-02-25T01:22:59+00:00">
+								2015/02/25 at 1:22 上午							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>你好</p>
+<p>請問一下<br>
+我們通常執行的都是手機傳訊息給arduino<br>
+我現在要由arduino傳訊息給手機 使用HC-05可以辦到嗎？</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel="nofollow" class="comment-reply-link btn btn-sm btn-default" href="http://swf.com.tw/?p=693&amp;replytocom=899637#respond" onclick="return addComment.moveForm( &quot;div-comment-899637&quot;, &quot;899637&quot;, &quot;respond&quot;, &quot;693&quot; )" aria-label="回覆 許智" style="display: inline;">回覆</a></div>			</article><!-- .comment-body -->
+<ol class="children">
+		<li id="comment-899638" class="comment byuser comment-author-administrator bypostauthor odd alt depth-2">
+			<article id="div-comment-899638" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="./HC-05與HC-06藍牙模組補充說明（一） - 網昱多媒體_files/3ded6f1f06d42ba142f7e7ce17855b79" srcset="http://0.gravatar.com/avatar/3ded6f1f06d42ba142f7e7ce17855b79?s=120&amp;d=retro&amp;r=g 2x" class="avatar avatar-60 photo" height="60" width="60">						<b class="fn"><a href="http://swf.com.tw/" rel="external nofollow" class="url">cubie</a></b> <span class="says">說：</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://swf.com.tw/?p=693#comment-899638">
+							<time datetime="2015-02-25T01:57:28+00:00">
+								2015/02/25 at 1:57 上午							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>可以！</p>
+<p>thanks,<br>
+jeffrey</p>
+				</div><!-- .comment-content -->
+
+							</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+		<li id="comment-900318" class="comment even thread-odd thread-alt depth-1 parent">
+			<article id="div-comment-900318" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="./HC-05與HC-06藍牙模組補充說明（一） - 網昱多媒體_files/dc888dd1b7159dd170862041e04a2e23" srcset="http://1.gravatar.com/avatar/dc888dd1b7159dd170862041e04a2e23?s=120&amp;d=retro&amp;r=g 2x" class="avatar avatar-60 photo" height="60" width="60">						<b class="fn">John</b> <span class="says">說：</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://swf.com.tw/?p=693#comment-900318">
+							<time datetime="2015-03-09T21:02:58+00:00">
+								2015/03/09 at 9:02 下午							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>老師您好:</p>
+<p>      目前看到支援arduino的藍芽都是SPP，請問有支援HSP及HFP的藍芽模組嗎?<br>
+還是HC-05也做得到?想把arduino作成類似藍芽耳機之類的形式，讓手機使用handsfree的app，謝謝</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel="nofollow" class="comment-reply-link btn btn-sm btn-default" href="http://swf.com.tw/?p=693&amp;replytocom=900318#respond" onclick="return addComment.moveForm( &quot;div-comment-900318&quot;, &quot;900318&quot;, &quot;respond&quot;, &quot;693&quot; )" aria-label="回覆 John" style="display: inline;">回覆</a></div>			</article><!-- .comment-body -->
+<ol class="children">
+		<li id="comment-900360" class="comment byuser comment-author-administrator bypostauthor odd alt depth-2">
+			<article id="div-comment-900360" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="./HC-05與HC-06藍牙模組補充說明（一） - 網昱多媒體_files/3ded6f1f06d42ba142f7e7ce17855b79" srcset="http://0.gravatar.com/avatar/3ded6f1f06d42ba142f7e7ce17855b79?s=120&amp;d=retro&amp;r=g 2x" class="avatar avatar-60 photo" height="60" width="60">						<b class="fn"><a href="http://swf.com.tw/" rel="external nofollow" class="url">cubie</a></b> <span class="says">說：</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://swf.com.tw/?p=693#comment-900360">
+							<time datetime="2015-03-10T21:13:51+00:00">
+								2015/03/10 at 9:13 下午							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>hi john:</p>
+<p>Arduino UNO的ATmega328微控制器，播放未壓縮WAV格式的聲音沒問題，但它可能無力即時解壓縮MP3或藍牙音訊的SBC壓縮格式。所以Arduino相容的MP3播放介面卡，上面都有一個聲音解壓縮晶片。</p>
+<p>thanks,<br>
+jeffrey</p>
+				</div><!-- .comment-content -->
+
+							</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+		<li id="comment-901340" class="comment even thread-even depth-1 parent">
+			<article id="div-comment-901340" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="./HC-05與HC-06藍牙模組補充說明（一） - 網昱多媒體_files/8cba613af4601cd340c74bcb2f066f94" srcset="http://2.gravatar.com/avatar/8cba613af4601cd340c74bcb2f066f94?s=120&amp;d=retro&amp;r=g 2x" class="avatar avatar-60 photo" height="60" width="60">						<b class="fn">j chen</b> <span class="says">說：</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://swf.com.tw/?p=693#comment-901340">
+							<time datetime="2015-03-28T16:21:02+00:00">
+								2015/03/28 at 4:21 下午							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>趙老師你好:<br>
+請問藍牙序列監控的AccessPort有支援window 8.1嗎?</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel="nofollow" class="comment-reply-link btn btn-sm btn-default" href="http://swf.com.tw/?p=693&amp;replytocom=901340#respond" onclick="return addComment.moveForm( &quot;div-comment-901340&quot;, &quot;901340&quot;, &quot;respond&quot;, &quot;693&quot; )" aria-label="回覆 j chen" style="display: inline;">回覆</a></div>			</article><!-- .comment-body -->
+<ol class="children">
+		<li id="comment-901373" class="comment byuser comment-author-administrator bypostauthor odd alt depth-2">
+			<article id="div-comment-901373" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="./HC-05與HC-06藍牙模組補充說明（一） - 網昱多媒體_files/3ded6f1f06d42ba142f7e7ce17855b79" srcset="http://0.gravatar.com/avatar/3ded6f1f06d42ba142f7e7ce17855b79?s=120&amp;d=retro&amp;r=g 2x" class="avatar avatar-60 photo" height="60" width="60">						<b class="fn"><a href="http://swf.com.tw/" rel="external nofollow" class="url">cubie</a></b> <span class="says">說：</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://swf.com.tw/?p=693#comment-901373">
+							<time datetime="2015-03-28T22:32:28+00:00">
+								2015/03/28 at 10:32 下午							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>如果不行的話，請下載<a href="http://freeware.the-meiers.org/" target="_blank" rel="nofollow">CoolTerm</a>或者<a href="http://realterm.sourceforge.net/" target="_blank" rel="nofollow">RealTerm</a>測試。</p>
+<p>thanks,<br>
+jeffrey</p>
+				</div><!-- .comment-content -->
+
+							</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+		<li id="comment-902826" class="comment even depth-2 parent">
+			<article id="div-comment-902826" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="./HC-05與HC-06藍牙模組補充說明（一） - 網昱多媒體_files/8cba613af4601cd340c74bcb2f066f94" srcset="http://2.gravatar.com/avatar/8cba613af4601cd340c74bcb2f066f94?s=120&amp;d=retro&amp;r=g 2x" class="avatar avatar-60 photo" height="60" width="60">						<b class="fn">j chen</b> <span class="says">說：</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://swf.com.tw/?p=693#comment-902826">
+							<time datetime="2015-04-21T23:19:59+00:00">
+								2015/04/21 at 11:19 下午							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>趙老師你好<br>
+ 經測試AccessPort 13.7 有支援window 8.1.<br>
+請問如何不須透過USB上載程式?<br>
+Thanks.</p>
+				</div><!-- .comment-content -->
+
+							</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+		<li id="comment-902830" class="comment byuser comment-author-administrator bypostauthor odd alt depth-2">
+			<article id="div-comment-902830" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="./HC-05與HC-06藍牙模組補充說明（一） - 網昱多媒體_files/3ded6f1f06d42ba142f7e7ce17855b79" srcset="http://0.gravatar.com/avatar/3ded6f1f06d42ba142f7e7ce17855b79?s=120&amp;d=retro&amp;r=g 2x" class="avatar avatar-60 photo" height="60" width="60">						<b class="fn"><a href="http://swf.com.tw/" rel="external nofollow" class="url">cubie</a></b> <span class="says">說：</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://swf.com.tw/?p=693#comment-902830">
+							<time datetime="2015-04-22T00:03:32+00:00">
+								2015/04/22 at 12:03 上午							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>請參閱「<a href="http://swf.com.tw/?p=759" rel="nofollow">透過藍牙上傳Arduino程式碼</a>」說明。</p>
+<p>thanks,<br>
+jeffrey</p>
+				</div><!-- .comment-content -->
+
+							</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+		<li id="comment-901611" class="comment even thread-odd thread-alt depth-1 parent">
+			<article id="div-comment-901611" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="./HC-05與HC-06藍牙模組補充說明（一） - 網昱多媒體_files/f0a57ab467ed944f9904edc6ac2f0cdb" srcset="http://0.gravatar.com/avatar/f0a57ab467ed944f9904edc6ac2f0cdb?s=120&amp;d=retro&amp;r=g 2x" class="avatar avatar-60 photo" height="60" width="60">						<b class="fn">smallcon</b> <span class="says">說：</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://swf.com.tw/?p=693#comment-901611">
+							<time datetime="2015-03-31T19:27:15+00:00">
+								2015/03/31 at 7:27 下午							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>請問一下前輩…..<br>
+小弟我目前使用Arduino SD卡模組，讀取TXT檔裡的值，一次要讀取64個檔案，但是目前卻一直讀到第六個檔就一直返回，小弟愚鈍，剛使用Arduino 不久，經驗不足…望前輩們能建議一些解決的方法供小弟參考..非常感謝!</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel="nofollow" class="comment-reply-link btn btn-sm btn-default" href="http://swf.com.tw/?p=693&amp;replytocom=901611#respond" onclick="return addComment.moveForm( &quot;div-comment-901611&quot;, &quot;901611&quot;, &quot;respond&quot;, &quot;693&quot; )" aria-label="回覆 smallcon" style="display: inline;">回覆</a></div>			</article><!-- .comment-body -->
+<ol class="children">
+		<li id="comment-901614" class="comment byuser comment-author-administrator bypostauthor odd alt depth-2">
+			<article id="div-comment-901614" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="./HC-05與HC-06藍牙模組補充說明（一） - 網昱多媒體_files/3ded6f1f06d42ba142f7e7ce17855b79" srcset="http://0.gravatar.com/avatar/3ded6f1f06d42ba142f7e7ce17855b79?s=120&amp;d=retro&amp;r=g 2x" class="avatar avatar-60 photo" height="60" width="60">						<b class="fn"><a href="http://swf.com.tw/" rel="external nofollow" class="url">cubie</a></b> <span class="says">說：</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://swf.com.tw/?p=693#comment-901614">
+							<time datetime="2015-03-31T20:17:20+00:00">
+								2015/03/31 at 8:17 下午							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>hi smallcon:</p>
+<p>兩個可能因素：<br>
+1. ATmega328的可用記憶體有限，也許讀入的檔案太大，超過記憶體容量。<br>
+2. 每次讀取檔案之後，都要關閉檔案，以便釋放記憶體空間，例如：</p>
+<p>File file;<br>
+// 程式碼省略…<br>
+file = SD.open(“a.txt");  // 讀取a.txt<br>
+// 程式碼省略…<br>
+file.close(); // 關閉檔案（釋放記憶體）<br>
+file = SD.open(“b.txt"); // 讀取b.txt<br>
+// 程式碼省略…<br>
+file.close(); // 關閉檔案</p>
+<p>thanks,<br>
+jeffrey</p>
+				</div><!-- .comment-content -->
+
+							</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+		<li id="comment-901617" class="comment even thread-even depth-1 parent">
+			<article id="div-comment-901617" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="./HC-05與HC-06藍牙模組補充說明（一） - 網昱多媒體_files/f0a57ab467ed944f9904edc6ac2f0cdb" srcset="http://0.gravatar.com/avatar/f0a57ab467ed944f9904edc6ac2f0cdb?s=120&amp;d=retro&amp;r=g 2x" class="avatar avatar-60 photo" height="60" width="60">						<b class="fn">smallcon</b> <span class="says">說：</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://swf.com.tw/?p=693#comment-901617">
+							<time datetime="2015-03-31T21:36:22+00:00">
+								2015/03/31 at 9:36 下午							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>老師您好：</p>
+<p>                我目前用的是 Arduino Uno版，目前所讀的txt檔，最大容量的檔案只有 256個值，約1.32KB，每次開檔後皆有做關檔的動作，我要一次讀取64個TXT檔，我之前有試著寫入1~256的數列到TXT檔，讀取出來，並計算總和，值皆正確，全部值為正值，但換回原本的data後(有正負)，再讀取，就只能讀取到第六個檔案，就讀不到第七個&gt;&lt;</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel="nofollow" class="comment-reply-link btn btn-sm btn-default" href="http://swf.com.tw/?p=693&amp;replytocom=901617#respond" onclick="return addComment.moveForm( &quot;div-comment-901617&quot;, &quot;901617&quot;, &quot;respond&quot;, &quot;693&quot; )" aria-label="回覆 smallcon" style="display: inline;">回覆</a></div>			</article><!-- .comment-body -->
+<ol class="children">
+		<li id="comment-901630" class="comment byuser comment-author-administrator bypostauthor odd alt depth-2">
+			<article id="div-comment-901630" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="./HC-05與HC-06藍牙模組補充說明（一） - 網昱多媒體_files/3ded6f1f06d42ba142f7e7ce17855b79" srcset="http://0.gravatar.com/avatar/3ded6f1f06d42ba142f7e7ce17855b79?s=120&amp;d=retro&amp;r=g 2x" class="avatar avatar-60 photo" height="60" width="60">						<b class="fn"><a href="http://swf.com.tw/" rel="external nofollow" class="url">cubie</a></b> <span class="says">說：</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://swf.com.tw/?p=693#comment-901630">
+							<time datetime="2015-03-31T23:35:33+00:00">
+								2015/03/31 at 11:35 下午							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>倘使寫入檔案也沒問題……那我也不清楚哪裡出錯了，拍謝～</p>
+<p>thanks,<br>
+jeffrey</p>
+				</div><!-- .comment-content -->
+
+							</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+		<li id="comment-902175" class="comment even thread-odd thread-alt depth-1 parent">
+			<article id="div-comment-902175" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="./HC-05與HC-06藍牙模組補充說明（一） - 網昱多媒體_files/7b5822b452747a3e562dd9e39100d763" srcset="http://1.gravatar.com/avatar/7b5822b452747a3e562dd9e39100d763?s=120&amp;d=retro&amp;r=g 2x" class="avatar avatar-60 photo" height="60" width="60">						<b class="fn">笑傲江湖</b> <span class="says">說：</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://swf.com.tw/?p=693#comment-902175">
+							<time datetime="2015-04-10T01:11:10+00:00">
+								2015/04/10 at 1:11 上午							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>可以請問一下為什麼我要進入測試AT指令的那個頁面時都沒顯示任何東西也無法輸入字元<br>
+(接腳程式碼都沒問題)</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel="nofollow" class="comment-reply-link btn btn-sm btn-default" href="http://swf.com.tw/?p=693&amp;replytocom=902175#respond" onclick="return addComment.moveForm( &quot;div-comment-902175&quot;, &quot;902175&quot;, &quot;respond&quot;, &quot;693&quot; )" aria-label="回覆 笑傲江湖" style="display: inline;">回覆</a></div>			</article><!-- .comment-body -->
+<ol class="children">
+		<li id="comment-902177" class="comment byuser comment-author-administrator bypostauthor odd alt depth-2">
+			<article id="div-comment-902177" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="./HC-05與HC-06藍牙模組補充說明（一） - 網昱多媒體_files/3ded6f1f06d42ba142f7e7ce17855b79" srcset="http://0.gravatar.com/avatar/3ded6f1f06d42ba142f7e7ce17855b79?s=120&amp;d=retro&amp;r=g 2x" class="avatar avatar-60 photo" height="60" width="60">						<b class="fn"><a href="http://swf.com.tw/" rel="external nofollow" class="url">cubie</a></b> <span class="says">說：</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://swf.com.tw/?p=693#comment-902177">
+							<time datetime="2015-04-10T01:33:29+00:00">
+								2015/04/10 at 1:33 上午							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>hi joseph:</p>
+<p>假設你的模組是HC-05，請先測量Key腳的接線，另外在發送AT命令時，有選擇以NL與CR結尾嗎？</p>
+<p>thanks,<br>
+jeffrey</p>
+				</div><!-- .comment-content -->
+
+							</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+		<li id="comment-902910" class="comment even thread-even depth-1 parent">
+			<article id="div-comment-902910" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="./HC-05與HC-06藍牙模組補充說明（一） - 網昱多媒體_files/8cba613af4601cd340c74bcb2f066f94" srcset="http://2.gravatar.com/avatar/8cba613af4601cd340c74bcb2f066f94?s=120&amp;d=retro&amp;r=g 2x" class="avatar avatar-60 photo" height="60" width="60">						<b class="fn">j chen</b> <span class="says">說：</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://swf.com.tw/?p=693#comment-902910">
+							<time datetime="2015-04-23T14:22:20+00:00">
+								2015/04/23 at 2:22 下午							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>謝謝趙老師提供有關用藍牙模組上載程式至Arduino之資訊<br>
+請問,可以在 Arduino程式內植插入Windows Command類似ARP,或對某一特定IP執行某特定command,以便得到與命令提示(Windows Command Prompt)視窗內相同的效果嗎?<br>
+Windows header與此有關嗎?<br>
+謝謝</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel="nofollow" class="comment-reply-link btn btn-sm btn-default" href="http://swf.com.tw/?p=693&amp;replytocom=902910#respond" onclick="return addComment.moveForm( &quot;div-comment-902910&quot;, &quot;902910&quot;, &quot;respond&quot;, &quot;693&quot; )" aria-label="回覆 j chen" style="display: inline;">回覆</a></div>			</article><!-- .comment-body -->
+<ol class="children">
+		<li id="comment-902922" class="comment byuser comment-author-administrator bypostauthor odd alt depth-2">
+			<article id="div-comment-902922" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="./HC-05與HC-06藍牙模組補充說明（一） - 網昱多媒體_files/3ded6f1f06d42ba142f7e7ce17855b79" srcset="http://0.gravatar.com/avatar/3ded6f1f06d42ba142f7e7ce17855b79?s=120&amp;d=retro&amp;r=g 2x" class="avatar avatar-60 photo" height="60" width="60">						<b class="fn"><a href="http://swf.com.tw/" rel="external nofollow" class="url">cubie</a></b> <span class="says">說：</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://swf.com.tw/?p=693#comment-902922">
+							<time datetime="2015-04-23T19:55:47+00:00">
+								2015/04/23 at 7:55 下午							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>如果有比較高階的網路應用需求，建議選用Raspberry Pi, CubieBoard,…等控制板。</p>
+<p>thanks,<br>
+jeffrey</p>
+				</div><!-- .comment-content -->
+
+							</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+		<li id="comment-903343" class="comment even thread-odd thread-alt depth-1 parent">
+			<article id="div-comment-903343" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="./HC-05與HC-06藍牙模組補充說明（一） - 網昱多媒體_files/a414878b973df29e4852fcb8ea574723" srcset="http://1.gravatar.com/avatar/a414878b973df29e4852fcb8ea574723?s=120&amp;d=retro&amp;r=g 2x" class="avatar avatar-60 photo" height="60" width="60">						<b class="fn">alex142526</b> <span class="says">說：</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://swf.com.tw/?p=693#comment-903343">
+							<time datetime="2015-05-03T00:15:30+00:00">
+								2015/05/03 at 12:15 上午							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>您好，我想要使用HC-05去接收另一個藍芽的訊號<br>
+但不太清楚到底應該怎麼做，目前設定都已經調好，但是看燈號一直閃爍應該是沒有配對上，想請問如何解決這個問題?</p>
+<p>再設定的部分AT+LINK一直顯示失敗，不明白到底哪裡出錯</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel="nofollow" class="comment-reply-link btn btn-sm btn-default" href="http://swf.com.tw/?p=693&amp;replytocom=903343#respond" onclick="return addComment.moveForm( &quot;div-comment-903343&quot;, &quot;903343&quot;, &quot;respond&quot;, &quot;693&quot; )" aria-label="回覆 alex142526" style="display: inline;">回覆</a></div>			</article><!-- .comment-body -->
+<ol class="children">
+		<li id="comment-903345" class="comment byuser comment-author-administrator bypostauthor odd alt depth-2">
+			<article id="div-comment-903345" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="./HC-05與HC-06藍牙模組補充說明（一） - 網昱多媒體_files/3ded6f1f06d42ba142f7e7ce17855b79" srcset="http://0.gravatar.com/avatar/3ded6f1f06d42ba142f7e7ce17855b79?s=120&amp;d=retro&amp;r=g 2x" class="avatar avatar-60 photo" height="60" width="60">						<b class="fn"><a href="http://swf.com.tw/" rel="external nofollow" class="url">cubie</a></b> <span class="says">說：</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://swf.com.tw/?p=693#comment-903345">
+							<time datetime="2015-05-03T00:41:38+00:00">
+								2015/05/03 at 12:41 上午							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>hi alex:</p>
+<p>和另一個已知藍牙模組自動連線，最簡單的方法，就是用AT+BIND命令綁定對方的MAC位址。請問你試過<a href="http://swf.com.tw/?p=750" target="_blank" rel="nofollow">藍牙模組補充說明（四）：無線連結兩個Arduino控制板</a>的方法嗎？或者一定要透過Arduino程式設定連線對象？</p>
+<p>thanks,<br>
+jeffrey</p>
+				</div><!-- .comment-content -->
+
+							</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+		<li id="comment-903439" class="comment even depth-2 parent">
+			<article id="div-comment-903439" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="./HC-05與HC-06藍牙模組補充說明（一） - 網昱多媒體_files/a414878b973df29e4852fcb8ea574723" srcset="http://1.gravatar.com/avatar/a414878b973df29e4852fcb8ea574723?s=120&amp;d=retro&amp;r=g 2x" class="avatar avatar-60 photo" height="60" width="60">						<b class="fn">alex142526</b> <span class="says">說：</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://swf.com.tw/?p=693#comment-903439">
+							<time datetime="2015-05-05T23:05:31+00:00">
+								2015/05/05 at 11:05 下午							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>您好，目前我的HC-05模組都已經設定好了，也有用BIND綁另一組藍芽的MAC位址了，但是現在我用LINK不管怎麼樣就是連不上去，一直顯示失敗，自動偵測的部分會一直跑出INQ=xxxx:xx:xxxxxx,….,..，每LINK失敗一次就會回傳一次INQ……</p>
+<p>我的另一個藍芽模組是現成的產品，不知道這樣會不會有影響。</p>
+				</div><!-- .comment-content -->
+
+							</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+		<li id="comment-903444" class="comment byuser comment-author-administrator bypostauthor odd alt depth-2">
+			<article id="div-comment-903444" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="./HC-05與HC-06藍牙模組補充說明（一） - 網昱多媒體_files/3ded6f1f06d42ba142f7e7ce17855b79" srcset="http://0.gravatar.com/avatar/3ded6f1f06d42ba142f7e7ce17855b79?s=120&amp;d=retro&amp;r=g 2x" class="avatar avatar-60 photo" height="60" width="60">						<b class="fn"><a href="http://swf.com.tw/" rel="external nofollow" class="url">cubie</a></b> <span class="says">說：</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://swf.com.tw/?p=693#comment-903444">
+							<time datetime="2015-05-05T23:50:51+00:00">
+								2015/05/05 at 11:50 下午							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>hi alex:</p>
+<p>「現成的產品」也採用HC-05模組嗎？有沒有嘗試透過AT命令將它回復成出廠設定，再重新配對？</p>
+<p>thanks,<br>
+jeffrey</p>
+				</div><!-- .comment-content -->
+
+							</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+		<li id="comment-903486" class="comment even thread-even depth-1 parent">
+			<article id="div-comment-903486" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="./HC-05與HC-06藍牙模組補充說明（一） - 網昱多媒體_files/a414878b973df29e4852fcb8ea574723" srcset="http://1.gravatar.com/avatar/a414878b973df29e4852fcb8ea574723?s=120&amp;d=retro&amp;r=g 2x" class="avatar avatar-60 photo" height="60" width="60">						<b class="fn">alex142526</b> <span class="says">說：</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://swf.com.tw/?p=693#comment-903486">
+							<time datetime="2015-05-06T22:06:14+00:00">
+								2015/05/06 at 10:06 下午							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>那個現成的產品是包裝好的，沒辦法拆開……，目前我可以用HC-05去連到我的藍芽產品，可是回傳的值都是亂碼<br>
+假如我的藍芽產品Baud 是115200的話，我是用AT+UART=115200,0,0去設定，應該沒錯吧?   但是回傳都是亂碼</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel="nofollow" class="comment-reply-link btn btn-sm btn-default" href="http://swf.com.tw/?p=693&amp;replytocom=903486#respond" onclick="return addComment.moveForm( &quot;div-comment-903486&quot;, &quot;903486&quot;, &quot;respond&quot;, &quot;693&quot; )" aria-label="回覆 alex142526" style="display: inline;">回覆</a></div>			</article><!-- .comment-body -->
+<ol class="children">
+		<li id="comment-903514" class="comment byuser comment-author-administrator bypostauthor odd alt depth-2">
+			<article id="div-comment-903514" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="./HC-05與HC-06藍牙模組補充說明（一） - 網昱多媒體_files/3ded6f1f06d42ba142f7e7ce17855b79" srcset="http://0.gravatar.com/avatar/3ded6f1f06d42ba142f7e7ce17855b79?s=120&amp;d=retro&amp;r=g 2x" class="avatar avatar-60 photo" height="60" width="60">						<b class="fn"><a href="http://swf.com.tw/" rel="external nofollow" class="url">cubie</a></b> <span class="says">說：</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://swf.com.tw/?p=693#comment-903514">
+							<time datetime="2015-05-07T18:03:55+00:00">
+								2015/05/07 at 6:03 下午							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>既然無法了解那個模組的規格，我認為與其花費一堆時間除錯，不如買個新的藍牙模組，畢竟一個HC-05不到兩百元台幣。</p>
+<p>have fun!<br>
+jeffrey</p>
+				</div><!-- .comment-content -->
+
+							</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+		<li id="comment-906485" class="comment even thread-odd thread-alt depth-1 parent">
+			<article id="div-comment-906485" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="./HC-05與HC-06藍牙模組補充說明（一） - 網昱多媒體_files/d4a4630d83bb8ece5ca3fe1d887cab6f" srcset="http://1.gravatar.com/avatar/d4a4630d83bb8ece5ca3fe1d887cab6f?s=120&amp;d=retro&amp;r=g 2x" class="avatar avatar-60 photo" height="60" width="60">						<b class="fn">Chandler</b> <span class="says">說：</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://swf.com.tw/?p=693#comment-906485">
+							<time datetime="2015-05-24T16:25:55+00:00">
+								2015/05/24 at 4:25 下午							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>我也買了這本書，以14-2範例檔用usb上傳uno板子(正常上傳)搭配hc-06藍牙，用手機zenfone5執行光碟的app，(連上藍牙板會由紅燈閃變恆亮)但是按上下左右三用電表量4567都不會有直流電輸出，請問有哪些地方可以確認查修呢?謝謝</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel="nofollow" class="comment-reply-link btn btn-sm btn-default" href="http://swf.com.tw/?p=693&amp;replytocom=906485#respond" onclick="return addComment.moveForm( &quot;div-comment-906485&quot;, &quot;906485&quot;, &quot;respond&quot;, &quot;693&quot; )" aria-label="回覆 Chandler" style="display: inline;">回覆</a></div>			</article><!-- .comment-body -->
+<ol class="children">
+		<li id="comment-906496" class="comment byuser comment-author-administrator bypostauthor odd alt depth-2">
+			<article id="div-comment-906496" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="./HC-05與HC-06藍牙模組補充說明（一） - 網昱多媒體_files/3ded6f1f06d42ba142f7e7ce17855b79" srcset="http://0.gravatar.com/avatar/3ded6f1f06d42ba142f7e7ce17855b79?s=120&amp;d=retro&amp;r=g 2x" class="avatar avatar-60 photo" height="60" width="60">						<b class="fn"><a href="http://swf.com.tw/" rel="external nofollow" class="url">cubie</a></b> <span class="says">說：</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://swf.com.tw/?p=693#comment-906496">
+							<time datetime="2015-05-24T16:58:52+00:00">
+								2015/05/24 at 4:58 下午							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>hi chandler:</p>
+<p>假設你的藍牙模組接在Arduino控制板的8和9腳，底下的程式碼將能在「序列埠監控視窗」顯示從手機接收到的字元：</p>
+<p></p><!-- Crayon Syntax Highlighter v_2.7.2_beta -->
+
+		<div id="crayon-58d3880be3d60182725590" class="crayon-syntax crayon-theme-classic crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" minimize scroll-mouseover" style="margin-top: 12px; margin-bottom: 12px; font-size: 12px !important; line-height: 15px !important; height: auto;">
+		
+			<div class="crayon-toolbar" data-settings=" mouseover overlay hide delay" style="font-size: 12px !important; height: 18px !important; line-height: 18px !important; margin-top: -18px; display: none; position: absolute; z-index: 2;"><span class="crayon-title"></span>
+			<div class="crayon-tools" style="font-size: 12px !important;height: 18px !important; line-height: 18px !important;"><div class="crayon-button crayon-nums-button crayon-pressed" title="切換是否顯示行編號"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-plain-button" title="純文本顯示代碼"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-wrap-button" title="切換自動換行"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-expand-button" title="點擊展開代碼" style="display: none;"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-copy-button" title="拷貝代碼"><div class="crayon-button-icon"></div></div><div class="crayon-button crayon-popup-button" title="在新窗口中顯示代碼"><div class="crayon-button-icon"></div></div></div></div>
+			<div class="crayon-info" style="min-height: 16.8px !important; line-height: 16.8px !important;"></div>
+			<div class="crayon-plain-wrap"><textarea wrap="soft" class="crayon-plain print-no" data-settings="dblclick" readonly="" style="tab-size: 4; font-size: 12px !important; line-height: 15px !important; z-index: 0; opacity: 0; overflow: hidden;">#include &lt;softwareserial.h&gt;   // 引用程式庫
+ 
+// 定義連接藍牙模組的序列埠
+SoftwareSerial BT(8, 9); // 接收腳, 傳送腳
+char val;  // 儲存接收資料的變數
+ 
+void setup() {
+  Serial.begin(9600);   // 與電腦序列埠連線
+  Serial.println("BT is ready!");
+ 
+  // 藍牙透傳模式的預設連線速率。
+  BT.begin(9600);
+}
+ 
+void loop() {
+  // 若收到藍牙模組的資料，送到「序列埠監控視窗」顯示
+  if (BT.available()) {
+    val = BT.read();
+    Serial.print(val);
+  }
+}</textarea></div>
+			<div class="crayon-main" style="position: relative; z-index: 1; overflow: hidden;">
+				<table class="crayon-table">
+					<tbody><tr class="crayon-row">
+				<td class="crayon-nums " data-settings="show">
+					<div class="crayon-nums-content" style="font-size: 12px !important; line-height: 15px !important;"><div class="crayon-num" data-line="crayon-58d3880be3d60182725590-1">1</div><div class="crayon-num crayon-striped-num" data-line="crayon-58d3880be3d60182725590-2">2</div><div class="crayon-num" data-line="crayon-58d3880be3d60182725590-3">3</div><div class="crayon-num crayon-striped-num" data-line="crayon-58d3880be3d60182725590-4">4</div><div class="crayon-num" data-line="crayon-58d3880be3d60182725590-5">5</div><div class="crayon-num crayon-striped-num" data-line="crayon-58d3880be3d60182725590-6">6</div><div class="crayon-num" data-line="crayon-58d3880be3d60182725590-7">7</div><div class="crayon-num crayon-striped-num" data-line="crayon-58d3880be3d60182725590-8">8</div><div class="crayon-num" data-line="crayon-58d3880be3d60182725590-9">9</div><div class="crayon-num crayon-striped-num" data-line="crayon-58d3880be3d60182725590-10">10</div><div class="crayon-num" data-line="crayon-58d3880be3d60182725590-11">11</div><div class="crayon-num crayon-striped-num" data-line="crayon-58d3880be3d60182725590-12">12</div><div class="crayon-num" data-line="crayon-58d3880be3d60182725590-13">13</div><div class="crayon-num crayon-striped-num" data-line="crayon-58d3880be3d60182725590-14">14</div><div class="crayon-num" data-line="crayon-58d3880be3d60182725590-15">15</div><div class="crayon-num crayon-striped-num" data-line="crayon-58d3880be3d60182725590-16">16</div><div class="crayon-num" data-line="crayon-58d3880be3d60182725590-17">17</div><div class="crayon-num crayon-striped-num" data-line="crayon-58d3880be3d60182725590-18">18</div><div class="crayon-num" data-line="crayon-58d3880be3d60182725590-19">19</div><div class="crayon-num crayon-striped-num" data-line="crayon-58d3880be3d60182725590-20">20</div><div class="crayon-num" data-line="crayon-58d3880be3d60182725590-21">21</div></div>
+				</td>
+						<td class="crayon-code"><div class="crayon-pre" style="font-size: 12px !important; line-height: 15px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-58d3880be3d60182725590-1"><span class="crayon-p">#include &lt;softwareserial.h&gt;&nbsp;&nbsp; // 引用程式庫</span></div><div class="crayon-line crayon-striped-line" id="crayon-58d3880be3d60182725590-2"><span class="crayon-h"> </span></div><div class="crayon-line" id="crayon-58d3880be3d60182725590-3"><span class="crayon-c">// 定義連接藍牙模組的序列埠</span></div><div class="crayon-line crayon-striped-line" id="crayon-58d3880be3d60182725590-4"><span class="crayon-e">SoftwareSerial </span><span class="crayon-e">BT</span><span class="crayon-sy">(</span><span class="crayon-cn">8</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-cn">9</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span><span class="crayon-h"> </span><span class="crayon-c">// 接收腳, 傳送腳</span></div><div class="crayon-line" id="crayon-58d3880be3d60182725590-5"><span class="crayon-t">char</span><span class="crayon-h"> </span><span class="crayon-v">val</span><span class="crayon-sy">;</span><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-c">// 儲存接收資料的變數</span></div><div class="crayon-line crayon-striped-line" id="crayon-58d3880be3d60182725590-6"><span class="crayon-h"> </span></div><div class="crayon-line" id="crayon-58d3880be3d60182725590-7"><span class="crayon-t">void</span><span class="crayon-h"> </span><span class="crayon-e">setup</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line crayon-striped-line" id="crayon-58d3880be3d60182725590-8"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-v">Serial</span><span class="crayon-sy">.</span><span class="crayon-e">begin</span><span class="crayon-sy">(</span><span class="crayon-cn">9600</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span><span class="crayon-h">&nbsp;&nbsp; </span><span class="crayon-c">// 與電腦序列埠連線</span></div><div class="crayon-line" id="crayon-58d3880be3d60182725590-9"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-v">Serial</span><span class="crayon-sy">.</span><span class="crayon-e">println</span><span class="crayon-sy">(</span><span class="crayon-s">"BT is ready!"</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-58d3880be3d60182725590-10"><span class="crayon-h"> </span></div><div class="crayon-line" id="crayon-58d3880be3d60182725590-11"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-c">// 藍牙透傳模式的預設連線速率。</span></div><div class="crayon-line crayon-striped-line" id="crayon-58d3880be3d60182725590-12"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-v">BT</span><span class="crayon-sy">.</span><span class="crayon-e">begin</span><span class="crayon-sy">(</span><span class="crayon-cn">9600</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-58d3880be3d60182725590-13"><span class="crayon-sy">}</span></div><div class="crayon-line crayon-striped-line" id="crayon-58d3880be3d60182725590-14"><span class="crayon-h"> </span></div><div class="crayon-line" id="crayon-58d3880be3d60182725590-15"><span class="crayon-t">void</span><span class="crayon-h"> </span><span class="crayon-e">loop</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line crayon-striped-line" id="crayon-58d3880be3d60182725590-16"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-c">// 若收到藍牙模組的資料，送到「序列埠監控視窗」顯示</span></div><div class="crayon-line" id="crayon-58d3880be3d60182725590-17"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-st">if</span><span class="crayon-h"> </span><span class="crayon-sy">(</span><span class="crayon-v">BT</span><span class="crayon-sy">.</span><span class="crayon-e">available</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line crayon-striped-line" id="crayon-58d3880be3d60182725590-18"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">val</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">BT</span><span class="crayon-sy">.</span><span class="crayon-e">read</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line" id="crayon-58d3880be3d60182725590-19"><span class="crayon-h">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="crayon-v">Serial</span><span class="crayon-sy">.</span><span class="crayon-e">print</span><span class="crayon-sy">(</span><span class="crayon-v">val</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-58d3880be3d60182725590-20"><span class="crayon-h">&nbsp;&nbsp;</span><span class="crayon-sy">}</span></div><div class="crayon-line" id="crayon-58d3880be3d60182725590-21"><span class="crayon-sy">}</span></div></div></td>
+					</tr>
+				</tbody></table>
+			</div>
+		</div>
+<!-- [Format Time: 0.0019 seconds] -->
+<p></p>
+<p>請測試看看。</p>
+<p>thanks,<br>
+jeffrey</p>
+				</div><!-- .comment-content -->
+
+							</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+		<li id="comment-906519" class="comment even thread-even depth-1">
+			<article id="div-comment-906519" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="./HC-05與HC-06藍牙模組補充說明（一） - 網昱多媒體_files/d4a4630d83bb8ece5ca3fe1d887cab6f" srcset="http://1.gravatar.com/avatar/d4a4630d83bb8ece5ca3fe1d887cab6f?s=120&amp;d=retro&amp;r=g 2x" class="avatar avatar-60 photo" height="60" width="60">						<b class="fn">Chandler</b> <span class="says">說：</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://swf.com.tw/?p=693#comment-906519">
+							<time datetime="2015-05-24T22:19:30+00:00">
+								2015/05/24 at 10:19 下午							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>謝謝大大的回覆<br>
+我再試試看：）<br>
+感謝您</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel="nofollow" class="comment-reply-link btn btn-sm btn-default" href="http://swf.com.tw/?p=693&amp;replytocom=906519#respond" onclick="return addComment.moveForm( &quot;div-comment-906519&quot;, &quot;906519&quot;, &quot;respond&quot;, &quot;693&quot; )" aria-label="回覆 Chandler" style="display: inline;">回覆</a></div>			</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+		<li id="comment-906928" class="comment odd alt thread-odd thread-alt depth-1 parent">
+			<article id="div-comment-906928" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="./HC-05與HC-06藍牙模組補充說明（一） - 網昱多媒體_files/dc80f84a622e3153b478b77e036d1208" srcset="http://1.gravatar.com/avatar/dc80f84a622e3153b478b77e036d1208?s=120&amp;d=retro&amp;r=g 2x" class="avatar avatar-60 photo" height="60" width="60">						<b class="fn">黃俊誠</b> <span class="says">說：</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://swf.com.tw/?p=693#comment-906928">
+							<time datetime="2015-05-28T22:13:11+00:00">
+								2015/05/28 at 10:13 下午							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>老師你好，我想要用手機連接hc05，HC05也設定好從機了<br>
+但是從手機上搜尋藍芽裝置就是找不到HC 05 請問是什麼問題呢? 謝謝</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel="nofollow" class="comment-reply-link btn btn-sm btn-default" href="http://swf.com.tw/?p=693&amp;replytocom=906928#respond" onclick="return addComment.moveForm( &quot;div-comment-906928&quot;, &quot;906928&quot;, &quot;respond&quot;, &quot;693&quot; )" aria-label="回覆 黃俊誠" style="display: inline;">回覆</a></div>			</article><!-- .comment-body -->
+<ol class="children">
+		<li id="comment-906934" class="comment byuser comment-author-administrator bypostauthor even depth-2">
+			<article id="div-comment-906934" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="./HC-05與HC-06藍牙模組補充說明（一） - 網昱多媒體_files/3ded6f1f06d42ba142f7e7ce17855b79" srcset="http://0.gravatar.com/avatar/3ded6f1f06d42ba142f7e7ce17855b79?s=120&amp;d=retro&amp;r=g 2x" class="avatar avatar-60 photo" height="60" width="60">						<b class="fn"><a href="http://swf.com.tw/" rel="external nofollow" class="url">cubie</a></b> <span class="says">說：</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://swf.com.tw/?p=693#comment-906934">
+							<time datetime="2015-05-28T23:18:34+00:00">
+								2015/05/28 at 11:18 下午							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>如果你可以從PC連結到HC-05藍牙模組，就代表你應該要換支手機測試 <img src="./HC-05與HC-06藍牙模組補充說明（一） - 網昱多媒體_files/icon_razz.gif" alt=":-P" class="wp-smiley"><br>
+thanks,<br>
+jeffrey</p>
+				</div><!-- .comment-content -->
+
+							</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+		<li id="comment-908762" class="comment odd alt thread-even depth-1 parent">
+			<article id="div-comment-908762" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="./HC-05與HC-06藍牙模組補充說明（一） - 網昱多媒體_files/69ec3dd93ff31181799eb59562d58790" srcset="http://0.gravatar.com/avatar/69ec3dd93ff31181799eb59562d58790?s=120&amp;d=retro&amp;r=g 2x" class="avatar avatar-60 photo" height="60" width="60">						<b class="fn">alex</b> <span class="says">說：</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://swf.com.tw/?p=693#comment-908762">
+							<time datetime="2015-07-09T11:03:39+00:00">
+								2015/07/09 at 11:03 上午							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>老師您好</p>
+<p>我在使用 HC-05 的藍芽模組時，將EN腳先接高電位，然後接上電源後，卻仍無法進入AT模式 ( 狀態指示燈仍快速閃爍 ) ，不知道有可能是什麼原因造成的？</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel="nofollow" class="comment-reply-link btn btn-sm btn-default" href="http://swf.com.tw/?p=693&amp;replytocom=908762#respond" onclick="return addComment.moveForm( &quot;div-comment-908762&quot;, &quot;908762&quot;, &quot;respond&quot;, &quot;693&quot; )" aria-label="回覆 alex" style="display: inline;">回覆</a></div>			</article><!-- .comment-body -->
+<ol class="children">
+		<li id="comment-908763" class="comment even depth-2 parent">
+			<article id="div-comment-908763" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="./HC-05與HC-06藍牙模組補充說明（一） - 網昱多媒體_files/69ec3dd93ff31181799eb59562d58790" srcset="http://0.gravatar.com/avatar/69ec3dd93ff31181799eb59562d58790?s=120&amp;d=retro&amp;r=g 2x" class="avatar avatar-60 photo" height="60" width="60">						<b class="fn">alex</b> <span class="says">說：</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://swf.com.tw/?p=693#comment-908763">
+							<time datetime="2015-07-09T11:16:04+00:00">
+								2015/07/09 at 11:16 上午							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>補充說明：如果我將EN腳接地，則狀態指示燈會全暗。</p>
+				</div><!-- .comment-content -->
+
+							</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+		<li id="comment-908804" class="comment byuser comment-author-administrator bypostauthor odd alt depth-2">
+			<article id="div-comment-908804" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="./HC-05與HC-06藍牙模組補充說明（一） - 網昱多媒體_files/3ded6f1f06d42ba142f7e7ce17855b79" srcset="http://0.gravatar.com/avatar/3ded6f1f06d42ba142f7e7ce17855b79?s=120&amp;d=retro&amp;r=g 2x" class="avatar avatar-60 photo" height="60" width="60">						<b class="fn"><a href="http://swf.com.tw/" rel="external nofollow" class="url">cubie</a></b> <span class="says">說：</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://swf.com.tw/?p=693#comment-908804">
+							<time datetime="2015-07-09T23:19:13+00:00">
+								2015/07/09 at 11:19 下午							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>hi alex:</p>
+<p>你有用電錶測試過EN腳是否和模組的第34腳相連嗎？</p>
+<p>thanks,<br>
+jeffrey</p>
+				</div><!-- .comment-content -->
+
+							</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+		<li id="comment-908846" class="comment even depth-2 parent">
+			<article id="div-comment-908846" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="./HC-05與HC-06藍牙模組補充說明（一） - 網昱多媒體_files/69ec3dd93ff31181799eb59562d58790" srcset="http://0.gravatar.com/avatar/69ec3dd93ff31181799eb59562d58790?s=120&amp;d=retro&amp;r=g 2x" class="avatar avatar-60 photo" height="60" width="60">						<b class="fn">alex</b> <span class="says">說：</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://swf.com.tw/?p=693#comment-908846">
+							<time datetime="2015-07-10T12:21:23+00:00">
+								2015/07/10 at 12:21 下午							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>老師您好</p>
+<p>暫時沒辦法取得電表，但在目測上可以確認有焊34腳位 ( 所有有焊的腳位為1、2、12、13、31、32、34，與第一張附帶底板的HC-05模組外觀圖相同 ) ，不知道是否仍需使用電表測量較為準確？非常感謝老師的回覆！</p>
+				</div><!-- .comment-content -->
+
+							</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+		<li id="comment-908921" class="comment byuser comment-author-administrator bypostauthor odd alt depth-2">
+			<article id="div-comment-908921" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="./HC-05與HC-06藍牙模組補充說明（一） - 網昱多媒體_files/3ded6f1f06d42ba142f7e7ce17855b79" srcset="http://0.gravatar.com/avatar/3ded6f1f06d42ba142f7e7ce17855b79?s=120&amp;d=retro&amp;r=g 2x" class="avatar avatar-60 photo" height="60" width="60">						<b class="fn"><a href="http://swf.com.tw/" rel="external nofollow" class="url">cubie</a></b> <span class="says">說：</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://swf.com.tw/?p=693#comment-908921">
+							<time datetime="2015-07-10T19:44:31+00:00">
+								2015/07/10 at 7:44 下午							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>目測不準，請使用儀錶測量，即使看似焊接上了，也有可能焊接不良（虛焊）。如果按照本文的方式，仍無法進入AT模式，請向經銷商索取技術文件，看看是否要透過其他方式連接。</p>
+<p>thanks,<br>
+jeffrey</p>
+				</div><!-- .comment-content -->
+
+							</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+		<li id="comment-909269" class="comment even thread-odd thread-alt depth-1">
+			<article id="div-comment-909269" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="./HC-05與HC-06藍牙模組補充說明（一） - 網昱多媒體_files/69ec3dd93ff31181799eb59562d58790" srcset="http://0.gravatar.com/avatar/69ec3dd93ff31181799eb59562d58790?s=120&amp;d=retro&amp;r=g 2x" class="avatar avatar-60 photo" height="60" width="60">						<b class="fn">alex</b> <span class="says">說：</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://swf.com.tw/?p=693#comment-909269">
+							<time datetime="2015-07-11T12:39:55+00:00">
+								2015/07/11 at 12:39 下午							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>了解了，非常感謝老師的回應！</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel="nofollow" class="comment-reply-link btn btn-sm btn-default" href="http://swf.com.tw/?p=693&amp;replytocom=909269#respond" onclick="return addComment.moveForm( &quot;div-comment-909269&quot;, &quot;909269&quot;, &quot;respond&quot;, &quot;693&quot; )" aria-label="回覆 alex" style="display: inline;">回覆</a></div>			</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+		<li id="comment-910266" class="comment odd alt thread-even depth-1 parent">
+			<article id="div-comment-910266" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="./HC-05與HC-06藍牙模組補充說明（一） - 網昱多媒體_files/acd7607409d30253b92fec9ac4c5cffe" srcset="http://1.gravatar.com/avatar/acd7607409d30253b92fec9ac4c5cffe?s=120&amp;d=retro&amp;r=g 2x" class="avatar avatar-60 photo" height="60" width="60">						<b class="fn">路人甲</b> <span class="says">說：</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://swf.com.tw/?p=693#comment-910266">
+							<time datetime="2015-07-13T09:13:39+00:00">
+								2015/07/13 at 9:13 上午							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>我朋友說mac的藍芽和我們通用的藍芽是不能相通的<br>
+這很奇怪，藍芽規格應該世界標準統一<br>
+我沒實際測試，驗証過真假<br>
+給大家參考</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel="nofollow" class="comment-reply-link btn btn-sm btn-default" href="http://swf.com.tw/?p=693&amp;replytocom=910266#respond" onclick="return addComment.moveForm( &quot;div-comment-910266&quot;, &quot;910266&quot;, &quot;respond&quot;, &quot;693&quot; )" aria-label="回覆 路人甲" style="display: inline;">回覆</a></div>			</article><!-- .comment-body -->
+<ol class="children">
+		<li id="comment-910573" class="comment byuser comment-author-administrator bypostauthor even depth-2">
+			<article id="div-comment-910573" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="./HC-05與HC-06藍牙模組補充說明（一） - 網昱多媒體_files/3ded6f1f06d42ba142f7e7ce17855b79" srcset="http://0.gravatar.com/avatar/3ded6f1f06d42ba142f7e7ce17855b79?s=120&amp;d=retro&amp;r=g 2x" class="avatar avatar-60 photo" height="60" width="60">						<b class="fn"><a href="http://swf.com.tw/" rel="external nofollow" class="url">cubie</a></b> <span class="says">說：</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://swf.com.tw/?p=693#comment-910573">
+							<time datetime="2015-07-13T22:41:43+00:00">
+								2015/07/13 at 10:41 下午							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>嗯，你朋友的說法是錯的。</p>
+<p>thanks,<br>
+jeffrey</p>
+				</div><!-- .comment-content -->
+
+							</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+		<li id="comment-910905" class="comment odd alt depth-2 parent">
+			<article id="div-comment-910905" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="./HC-05與HC-06藍牙模組補充說明（一） - 網昱多媒體_files/acd7607409d30253b92fec9ac4c5cffe" srcset="http://1.gravatar.com/avatar/acd7607409d30253b92fec9ac4c5cffe?s=120&amp;d=retro&amp;r=g 2x" class="avatar avatar-60 photo" height="60" width="60">						<b class="fn">路人甲</b> <span class="says">說：</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://swf.com.tw/?p=693#comment-910905">
+							<time datetime="2015-07-14T14:27:05+00:00">
+								2015/07/14 at 2:27 下午							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>不好意思，請問一下說法哪邊錯<br>
+iphone的藍芽真的不能跟android手機藍芽連線<br>
+(狍歉沒有不禮貌，單純提出疑問而已)</p>
+				</div><!-- .comment-content -->
+
+							</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+		<li id="comment-910978" class="comment byuser comment-author-administrator bypostauthor even depth-2">
+			<article id="div-comment-910978" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="./HC-05與HC-06藍牙模組補充說明（一） - 網昱多媒體_files/3ded6f1f06d42ba142f7e7ce17855b79" srcset="http://0.gravatar.com/avatar/3ded6f1f06d42ba142f7e7ce17855b79?s=120&amp;d=retro&amp;r=g 2x" class="avatar avatar-60 photo" height="60" width="60">						<b class="fn"><a href="http://swf.com.tw/" rel="external nofollow" class="url">cubie</a></b> <span class="says">說：</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://swf.com.tw/?p=693#comment-910978">
+							<time datetime="2015-07-14T17:54:10+00:00">
+								2015/07/14 at 5:54 下午							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>你上上個留言提到Mac，上個留言講到iPhone，這兩個是完全不同的系統，不能相提並論；不過，既然商品有<a href="https://zh.wikipedia.org/wiki/%E8%97%8D%E7%89%99" target="_blank" rel="nofollow">藍牙的註冊商標</a>，就代表是經過藍牙組織認證的相容商品。</p>
+<p>就好像路邊的金色M型拱門商標，代表「麥當勞」，每一家分店販售的食品口味都是一樣的。但是，並非每一家分店的規模大小、遊戲設施和商品種類都一樣，有些小店只有賣冰淇淋和飲料，不賣漢堡。</p>
+<p>藍牙商品分成不同的規範、協議和版本，像藍牙滑鼠和藍牙耳機，雖然都是用藍牙的技術，但卻是不同規範的產品。某些具備藍牙功能的手機，有支援藍牙耳機，可是它不一定支援藍牙滑鼠，因為它並沒有內建對應的驅動程式。</p>
+<p>至於iPhone和Android不能透過藍牙連線，你可以想成蘋果把Android當成「奧客」，遇到Android的連線要求，一律回絕…這不是藍牙的問題。</p>
+<p>thanks,<br>
+jeffrey</p>
+				</div><!-- .comment-content -->
+
+							</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+		<li id="comment-911477" class="comment odd alt thread-odd thread-alt depth-1 parent">
+			<article id="div-comment-911477" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="./HC-05與HC-06藍牙模組補充說明（一） - 網昱多媒體_files/f8f97dd7d32406974cc9c1e2e22e9180" srcset="http://0.gravatar.com/avatar/f8f97dd7d32406974cc9c1e2e22e9180?s=120&amp;d=retro&amp;r=g 2x" class="avatar avatar-60 photo" height="60" width="60">						<b class="fn">小黑</b> <span class="says">說：</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://swf.com.tw/?p=693#comment-911477">
+							<time datetime="2015-07-15T17:40:56+00:00">
+								2015/07/15 at 5:40 下午							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>老師我想請問一下 我用ble v1.0低功率藍芽模組但我電腦都無法新增這個裝置<br>
+但裝置管理員藍芽下有我的這個藍芽模組的名稱而且顯示這個裝置正常運作中!!</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel="nofollow" class="comment-reply-link btn btn-sm btn-default" href="http://swf.com.tw/?p=693&amp;replytocom=911477#respond" onclick="return addComment.moveForm( &quot;div-comment-911477&quot;, &quot;911477&quot;, &quot;respond&quot;, &quot;693&quot; )" aria-label="回覆 小黑" style="display: inline;">回覆</a></div>			</article><!-- .comment-body -->
+<ol class="children">
+		<li id="comment-911525" class="comment byuser comment-author-administrator bypostauthor even depth-2">
+			<article id="div-comment-911525" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="./HC-05與HC-06藍牙模組補充說明（一） - 網昱多媒體_files/3ded6f1f06d42ba142f7e7ce17855b79" srcset="http://0.gravatar.com/avatar/3ded6f1f06d42ba142f7e7ce17855b79?s=120&amp;d=retro&amp;r=g 2x" class="avatar avatar-60 photo" height="60" width="60">						<b class="fn"><a href="http://swf.com.tw/" rel="external nofollow" class="url">cubie</a></b> <span class="says">說：</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://swf.com.tw/?p=693#comment-911525">
+							<time datetime="2015-07-15T19:53:44+00:00">
+								2015/07/15 at 7:53 下午							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>hi 小黑：</p>
+<p>也許是驅動程式的問題，Windows 8有支援低功耗（BLE）藍牙，但我還沒測試過，拍謝～</p>
+<p>thanks,<br>
+jeffrey</p>
+				</div><!-- .comment-content -->
+
+							</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+		<li id="comment-923890" class="comment odd alt thread-even depth-1 parent">
+			<article id="div-comment-923890" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="./HC-05與HC-06藍牙模組補充說明（一） - 網昱多媒體_files/bb3a7efa04d1666624ba5d260625e0cc" srcset="http://2.gravatar.com/avatar/bb3a7efa04d1666624ba5d260625e0cc?s=120&amp;d=retro&amp;r=g 2x" class="avatar avatar-60 photo" height="60" width="60">						<b class="fn">jack</b> <span class="says">說：</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://swf.com.tw/?p=693#comment-923890">
+							<time datetime="2015-07-30T21:52:51+00:00">
+								2015/07/30 at 9:52 下午							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>您好，<br>
+我使用HC-05與PC配對完成後，再裝置管理員裡，為何會產生兩個com？有何作用？<br>
+謝謝</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel="nofollow" class="comment-reply-link btn btn-sm btn-default" href="http://swf.com.tw/?p=693&amp;replytocom=923890#respond" onclick="return addComment.moveForm( &quot;div-comment-923890&quot;, &quot;923890&quot;, &quot;respond&quot;, &quot;693&quot; )" aria-label="回覆 jack" style="display: inline;">回覆</a></div>			</article><!-- .comment-body -->
+<ol class="children">
+		<li id="comment-923912" class="comment byuser comment-author-administrator bypostauthor even depth-2">
+			<article id="div-comment-923912" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="./HC-05與HC-06藍牙模組補充說明（一） - 網昱多媒體_files/3ded6f1f06d42ba142f7e7ce17855b79" srcset="http://0.gravatar.com/avatar/3ded6f1f06d42ba142f7e7ce17855b79?s=120&amp;d=retro&amp;r=g 2x" class="avatar avatar-60 photo" height="60" width="60">						<b class="fn"><a href="http://swf.com.tw/" rel="external nofollow" class="url">cubie</a></b> <span class="says">說：</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://swf.com.tw/?p=693#comment-923912">
+							<time datetime="2015-07-30T22:59:06+00:00">
+								2015/07/30 at 10:59 下午							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>hi jack:</p>
+<p>藍牙的兩個COM埠，類似15-12頁提到的網路連線埠號（port）：一個是連出（outgoing）埠，讓電腦的應用程式（如：Arduino開發工具）初始化連線到藍牙控制板。</p>
+<p>另一個則是連入（incoming）埠，讓外部裝置（如：藍牙控制板）初始化連線到電腦上的應用程式。通常只會用到其中一個COM埠。</p>
+<p>thanks,<br>
+jeffrey</p>
+				</div><!-- .comment-content -->
+
+							</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+		<li id="comment-933301" class="comment odd alt thread-odd thread-alt depth-1 parent">
+			<article id="div-comment-933301" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="./HC-05與HC-06藍牙模組補充說明（一） - 網昱多媒體_files/acd7607409d30253b92fec9ac4c5cffe" srcset="http://1.gravatar.com/avatar/acd7607409d30253b92fec9ac4c5cffe?s=120&amp;d=retro&amp;r=g 2x" class="avatar avatar-60 photo" height="60" width="60">						<b class="fn">路人甲</b> <span class="says">說：</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://swf.com.tw/?p=693#comment-933301">
+							<time datetime="2015-08-10T14:44:31+00:00">
+								2015/08/10 at 2:44 下午							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>這篇留言回覆刷得太快了，害我找了2個禮拜<br>
+終於找到，只是想知道回覆的答案而已</p>
+<p>抱歉，兩篇留言舉不同產品例子<br>
+不過講的都是APPLE的藍牙<br>
+只是覺得很納悶，藍牙發展那麼成熟了<br>
+你APPLE自訂藍牙PROTOCOL<br>
+自稱自己也有藍牙系統<br>
+結果不能跟非自家藍牙系統的產品相連<br>
+真是任性<br>
+只是說有能力，實力強大的系統，想怎樣都行</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel="nofollow" class="comment-reply-link btn btn-sm btn-default" href="http://swf.com.tw/?p=693&amp;replytocom=933301#respond" onclick="return addComment.moveForm( &quot;div-comment-933301&quot;, &quot;933301&quot;, &quot;respond&quot;, &quot;693&quot; )" aria-label="回覆 路人甲" style="display: inline;">回覆</a></div>			</article><!-- .comment-body -->
+<ol class="children">
+		<li id="comment-933316" class="comment byuser comment-author-administrator bypostauthor even depth-2">
+			<article id="div-comment-933316" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="./HC-05與HC-06藍牙模組補充說明（一） - 網昱多媒體_files/3ded6f1f06d42ba142f7e7ce17855b79" srcset="http://0.gravatar.com/avatar/3ded6f1f06d42ba142f7e7ce17855b79?s=120&amp;d=retro&amp;r=g 2x" class="avatar avatar-60 photo" height="60" width="60">						<b class="fn"><a href="http://swf.com.tw/" rel="external nofollow" class="url">cubie</a></b> <span class="says">說：</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://swf.com.tw/?p=693#comment-933316">
+							<time datetime="2015-08-10T18:46:34+00:00">
+								2015/08/10 at 6:46 下午							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>我目前沒有iOS設備，不過在Mac OS X上，透過藍牙在Mac與Android裝置間互傳檔案並沒有問題。</p>
+<p>換個想法，藍牙的傳輸速率不高，而且絕大部分都是用在聲音資料傳送，這方面就沒有相容性問題；無論哪個廠牌的藍牙耳機，PC, Mac, iOS和Android都能支援。</p>
+<p>若要跨裝置無線傳遞檔案，用WiFi比較好。像Fast File Transfer和Feem等App，都有支援在iOS與Android間透過WiFi互傳檔案。</p>
+<p>thanks,<br>
+jeffrey</p>
+				</div><!-- .comment-content -->
+
+							</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+		<li id="comment-933705" class="comment odd alt thread-even depth-1 parent">
+			<article id="div-comment-933705" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="./HC-05與HC-06藍牙模組補充說明（一） - 網昱多媒體_files/c82cb69eaa99fa5f95c011337b02bf63" srcset="http://0.gravatar.com/avatar/c82cb69eaa99fa5f95c011337b02bf63?s=120&amp;d=retro&amp;r=g 2x" class="avatar avatar-60 photo" height="60" width="60">						<b class="fn">chang</b> <span class="says">說：</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://swf.com.tw/?p=693#comment-933705">
+							<time datetime="2015-08-15T00:18:04+00:00">
+								2015/08/15 at 12:18 上午							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>老師不好意思<br>
+我是○○高工<br>
+電子三的學生<br>
+因為三年級了<br>
+最近也要開始製作專題</p>
+<p>目前我是想到一個題目可是目前有個架構<br>
+可是不知道要怎麼讓他能夠實現</p>
+<p>我是想做一個裝置<br>
+他可以透過紅外線裝置來感測周圍物體的距離然後再透過藍芽模組回傳給手機提醒使用者<br>
+要注意周圍的物體以免碰撞到</p>
+<p>然而畢竟東西只有想出架構<br>
+卻不知道要用甚麼東西<br>
+是否可以請老師您能夠麻煩老師您指點一下</p>
+<p>這是我的LINE ○○○○</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel="nofollow" class="comment-reply-link btn btn-sm btn-default" href="http://swf.com.tw/?p=693&amp;replytocom=933705#respond" onclick="return addComment.moveForm( &quot;div-comment-933705&quot;, &quot;933705&quot;, &quot;respond&quot;, &quot;693&quot; )" aria-label="回覆 chang" style="display: inline;">回覆</a></div>			</article><!-- .comment-body -->
+<ol class="children">
+		<li id="comment-933768" class="comment byuser comment-author-administrator bypostauthor even depth-2">
+			<article id="div-comment-933768" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="./HC-05與HC-06藍牙模組補充說明（一） - 網昱多媒體_files/3ded6f1f06d42ba142f7e7ce17855b79" srcset="http://0.gravatar.com/avatar/3ded6f1f06d42ba142f7e7ce17855b79?s=120&amp;d=retro&amp;r=g 2x" class="avatar avatar-60 photo" height="60" width="60">						<b class="fn"><a href="http://swf.com.tw/" rel="external nofollow" class="url">cubie</a></b> <span class="says">說：</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://swf.com.tw/?p=693#comment-933768">
+							<time datetime="2015-08-15T18:31:37+00:00">
+								2015/08/15 at 6:31 下午							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>hi chang:</p>
+<p>為了避免困擾，我改掉你的姓名和學校名稱。你的專題作品構想很類似盲胞的輔具，你可以嘗試底下的關鍵字搜尋組合，即可找到一些相關作品：</p>
+<p>project for blind<br>
+ultrasonic blind project<br>
+blind helper stick</p>
+<p>像這個<a href="http://grathio.com/2011/08/meet-the-tacit-project-its-sonar-for-the-blind/" target="_blank" rel="nofollow">手套</a>、<a href="https://www.youtube.com/watch?v=tSOu_hxs_jo" target="_blank" rel="nofollow">腰帶</a>還有<a href="https://www.youtube.com/watch?v=by0aMBQDjyk" target="_blank" rel="nofollow">背心</a>。這幾個作品都是用超音波測距元件，你可以改用紅外線測距元件試試看，相關模組和程式庫可搜尋「紅外測距模塊」。</p>
+<p>關於這個作品的可行性評估，再麻煩你和專題老師討論。</p>
+<p>thanks,<br>
+jeffrey</p>
+				</div><!-- .comment-content -->
+
+							</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+		<li id="comment-933787" class="comment odd alt thread-odd thread-alt depth-1">
+			<article id="div-comment-933787" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="./HC-05與HC-06藍牙模組補充說明（一） - 網昱多媒體_files/c82cb69eaa99fa5f95c011337b02bf63" srcset="http://0.gravatar.com/avatar/c82cb69eaa99fa5f95c011337b02bf63?s=120&amp;d=retro&amp;r=g 2x" class="avatar avatar-60 photo" height="60" width="60">						<b class="fn">chang</b> <span class="says">說：</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://swf.com.tw/?p=693#comment-933787">
+							<time datetime="2015-08-16T01:10:34+00:00">
+								2015/08/16 at 1:10 上午							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>謝謝老師給的建議</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel="nofollow" class="comment-reply-link btn btn-sm btn-default" href="http://swf.com.tw/?p=693&amp;replytocom=933787#respond" onclick="return addComment.moveForm( &quot;div-comment-933787&quot;, &quot;933787&quot;, &quot;respond&quot;, &quot;693&quot; )" aria-label="回覆 chang" style="display: inline;">回覆</a></div>			</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+		<li id="comment-936964" class="comment even thread-even depth-1 parent">
+			<article id="div-comment-936964" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="./HC-05與HC-06藍牙模組補充說明（一） - 網昱多媒體_files/56b6c50e12493d85e53825466ba244be" srcset="http://2.gravatar.com/avatar/56b6c50e12493d85e53825466ba244be?s=120&amp;d=retro&amp;r=g 2x" class="avatar avatar-60 photo" height="60" width="60">						<b class="fn">Tim</b> <span class="says">說：</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://swf.com.tw/?p=693#comment-936964">
+							<time datetime="2015-11-20T17:09:29+00:00">
+								2015/11/20 at 5:09 下午							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>老師您好<br>
+看了您的文章退我來說幫助很大<br>
+但是我目前遇到一個問題<br>
+我的桌電(Win10)搭配CSR的晶片與驅動<br>
+連上HC-05後，只會產生incoming的COM port<br>
+輕吻也甚麼辦法能夠建立outgoing 的COM port嗎??</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel="nofollow" class="comment-reply-link btn btn-sm btn-default" href="http://swf.com.tw/?p=693&amp;replytocom=936964#respond" onclick="return addComment.moveForm( &quot;div-comment-936964&quot;, &quot;936964&quot;, &quot;respond&quot;, &quot;693&quot; )" aria-label="回覆 Tim" style="display: inline;">回覆</a></div>			</article><!-- .comment-body -->
+<ol class="children">
+		<li id="comment-936976" class="comment byuser comment-author-administrator bypostauthor odd alt depth-2">
+			<article id="div-comment-936976" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="./HC-05與HC-06藍牙模組補充說明（一） - 網昱多媒體_files/3ded6f1f06d42ba142f7e7ce17855b79" srcset="http://0.gravatar.com/avatar/3ded6f1f06d42ba142f7e7ce17855b79?s=120&amp;d=retro&amp;r=g 2x" class="avatar avatar-60 photo" height="60" width="60">						<b class="fn"><a href="http://swf.com.tw/" rel="external nofollow" class="url">cubie</a></b> <span class="says">說：</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://swf.com.tw/?p=693#comment-936976">
+							<time datetime="2015-11-22T08:48:31+00:00">
+								2015/11/22 at 8:48 上午							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>hi tim:</p>
+<p>請移除並重新安裝藍牙程式試試看。</p>
+<p>thanks,<br>
+jeffrey</p>
+				</div><!-- .comment-content -->
+
+							</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+		<li id="comment-937509" class="comment even thread-odd thread-alt depth-1 parent">
+			<article id="div-comment-937509" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="./HC-05與HC-06藍牙模組補充說明（一） - 網昱多媒體_files/6938ef8c12945bcadbffaeaef4d08b75" srcset="http://0.gravatar.com/avatar/6938ef8c12945bcadbffaeaef4d08b75?s=120&amp;d=retro&amp;r=g 2x" class="avatar avatar-60 photo" height="60" width="60">						<b class="fn">Ayuc</b> <span class="says">說：</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://swf.com.tw/?p=693#comment-937509">
+							<time datetime="2015-12-08T19:54:04+00:00">
+								2015/12/08 at 7:54 下午							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>嗨<br>
+我想請問我的HC05已經建立好連線<br>
+在AT指令那邊已經可以輸入指令也都會回傳OK<br>
+但電腦或是手機裝置都偵測不到<br>
+不知道是什麼問題OAO</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel="nofollow" class="comment-reply-link btn btn-sm btn-default" href="http://swf.com.tw/?p=693&amp;replytocom=937509#respond" onclick="return addComment.moveForm( &quot;div-comment-937509&quot;, &quot;937509&quot;, &quot;respond&quot;, &quot;693&quot; )" aria-label="回覆 Ayuc" style="display: inline;">回覆</a></div>			</article><!-- .comment-body -->
+<ol class="children">
+		<li id="comment-937541" class="comment byuser comment-author-administrator bypostauthor odd alt depth-2">
+			<article id="div-comment-937541" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="./HC-05與HC-06藍牙模組補充說明（一） - 網昱多媒體_files/3ded6f1f06d42ba142f7e7ce17855b79" srcset="http://0.gravatar.com/avatar/3ded6f1f06d42ba142f7e7ce17855b79?s=120&amp;d=retro&amp;r=g 2x" class="avatar avatar-60 photo" height="60" width="60">						<b class="fn"><a href="http://swf.com.tw/" rel="external nofollow" class="url">cubie</a></b> <span class="says">說：</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://swf.com.tw/?p=693#comment-937541">
+							<time datetime="2015-12-08T22:59:41+00:00">
+								2015/12/08 at 10:59 下午							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>hi ayuc:</p>
+<p>藍牙模組的AT指令是透過「有線」傳送，請問設定完畢後，你有將「進入AT命令回應模式」的腳位接地嗎？如果藍牙模組處於AT命令模式，它就無法透過無線電通訊。</p>
+<p>thanks,<br>
+jeffrey</p>
+				</div><!-- .comment-content -->
+
+							</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+		<li id="comment-937775" class="comment even thread-even depth-1 parent">
+			<article id="div-comment-937775" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="./HC-05與HC-06藍牙模組補充說明（一） - 網昱多媒體_files/fae1495bf6803d45d4dfe42b2b639b76" srcset="http://0.gravatar.com/avatar/fae1495bf6803d45d4dfe42b2b639b76?s=120&amp;d=retro&amp;r=g 2x" class="avatar avatar-60 photo" height="60" width="60">						<b class="fn">www</b> <span class="says">說：</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://swf.com.tw/?p=693#comment-937775">
+							<time datetime="2015-12-15T11:24:05+00:00">
+								2015/12/15 at 11:24 上午							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>老师您好！我看您文章里的那些模组的图都很可爱，请问这是用什么软体画的?有模板吗？</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel="nofollow" class="comment-reply-link btn btn-sm btn-default" href="http://swf.com.tw/?p=693&amp;replytocom=937775#respond" onclick="return addComment.moveForm( &quot;div-comment-937775&quot;, &quot;937775&quot;, &quot;respond&quot;, &quot;693&quot; )" aria-label="回覆 www" style="display: inline;">回覆</a></div>			</article><!-- .comment-body -->
+<ol class="children">
+		<li id="comment-937784" class="comment byuser comment-author-administrator bypostauthor odd alt depth-2">
+			<article id="div-comment-937784" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="./HC-05與HC-06藍牙模組補充說明（一） - 網昱多媒體_files/3ded6f1f06d42ba142f7e7ce17855b79" srcset="http://0.gravatar.com/avatar/3ded6f1f06d42ba142f7e7ce17855b79?s=120&amp;d=retro&amp;r=g 2x" class="avatar avatar-60 photo" height="60" width="60">						<b class="fn"><a href="http://swf.com.tw/" rel="external nofollow" class="url">cubie</a></b> <span class="says">說：</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://swf.com.tw/?p=693#comment-937784">
+							<time datetime="2015-12-15T22:49:15+00:00">
+								2015/12/15 at 10:49 下午							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>hi www:</p>
+<p>謝謝，我是用Flash畫的，沒有模板。</p>
+<p>thanks,<br>
+jeffrey</p>
+				</div><!-- .comment-content -->
+
+							</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+		<li id="comment-939152" class="comment even thread-odd thread-alt depth-1 parent">
+			<article id="div-comment-939152" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="./HC-05與HC-06藍牙模組補充說明（一） - 網昱多媒體_files/a1bc3380c3b9bbfb431ddbc89b58f66b" srcset="http://1.gravatar.com/avatar/a1bc3380c3b9bbfb431ddbc89b58f66b?s=120&amp;d=retro&amp;r=g 2x" class="avatar avatar-60 photo" height="60" width="60">						<b class="fn">王楷瑞</b> <span class="says">說：</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://swf.com.tw/?p=693#comment-939152">
+							<time datetime="2016-02-19T18:26:46+00:00">
+								2016/02/19 at 6:26 下午							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>老師不好意思打擾了<br>
+請問標榜距離100米的4.0藍芽跟HC-05一起連接那他的距離還是100米嗎??<br>
+謝謝老師</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel="nofollow" class="comment-reply-link btn btn-sm btn-default" href="http://swf.com.tw/?p=693&amp;replytocom=939152#respond" onclick="return addComment.moveForm( &quot;div-comment-939152&quot;, &quot;939152&quot;, &quot;respond&quot;, &quot;693&quot; )" aria-label="回覆 王楷瑞" style="display: inline;">回覆</a></div>			</article><!-- .comment-body -->
+<ol class="children">
+		<li id="comment-939154" class="comment byuser comment-author-administrator bypostauthor odd alt depth-2">
+			<article id="div-comment-939154" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="./HC-05與HC-06藍牙模組補充說明（一） - 網昱多媒體_files/3ded6f1f06d42ba142f7e7ce17855b79" srcset="http://0.gravatar.com/avatar/3ded6f1f06d42ba142f7e7ce17855b79?s=120&amp;d=retro&amp;r=g 2x" class="avatar avatar-60 photo" height="60" width="60">						<b class="fn"><a href="http://swf.com.tw/" rel="external nofollow" class="url">cubie</a></b> <span class="says">說：</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://swf.com.tw/?p=693#comment-939154">
+							<time datetime="2016-02-19T20:40:03+00:00">
+								2016/02/19 at 8:40 下午							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>hi 阿楷：</p>
+<p>也許可以接收到長距離模組傳出的訊號，但是長距離模組應該收不到短距離模組的訊號。</p>
+<p>thanks,<br>
+jeffrey</p>
+				</div><!-- .comment-content -->
+
+							</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+		<li id="comment-939618" class="comment even thread-even depth-1 parent">
+			<article id="div-comment-939618" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="./HC-05與HC-06藍牙模組補充說明（一） - 網昱多媒體_files/c3f2e4e26ee83b9da57320931e426618" srcset="http://0.gravatar.com/avatar/c3f2e4e26ee83b9da57320931e426618?s=120&amp;d=retro&amp;r=g 2x" class="avatar avatar-60 photo" height="60" width="60">						<b class="fn">偉偉</b> <span class="says">說：</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://swf.com.tw/?p=693#comment-939618">
+							<time datetime="2016-03-09T23:54:46+00:00">
+								2016/03/09 at 11:54 下午							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>老師您好~<br>
+我想要請問一下，有辦法設定HC-05自動連接已經連接過的手機嗎，只要手機靠近就會自動連接!<br>
+如果可以可以不要輸入位址到HC-05上，像是將位址作為變數等等~謝謝</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel="nofollow" class="comment-reply-link btn btn-sm btn-default" href="http://swf.com.tw/?p=693&amp;replytocom=939618#respond" onclick="return addComment.moveForm( &quot;div-comment-939618&quot;, &quot;939618&quot;, &quot;respond&quot;, &quot;693&quot; )" aria-label="回覆 偉偉" style="display: inline;">回覆</a></div>			</article><!-- .comment-body -->
+<ol class="children">
+		<li id="comment-939619" class="comment byuser comment-author-administrator bypostauthor odd alt depth-2">
+			<article id="div-comment-939619" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="./HC-05與HC-06藍牙模組補充說明（一） - 網昱多媒體_files/3ded6f1f06d42ba142f7e7ce17855b79" srcset="http://0.gravatar.com/avatar/3ded6f1f06d42ba142f7e7ce17855b79?s=120&amp;d=retro&amp;r=g 2x" class="avatar avatar-60 photo" height="60" width="60">						<b class="fn"><a href="http://swf.com.tw/" rel="external nofollow" class="url">cubie</a></b> <span class="says">說：</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://swf.com.tw/?p=693#comment-939619">
+							<time datetime="2016-03-10T00:18:26+00:00">
+								2016/03/10 at 12:18 上午							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>hi wayne:</p>
+<p>從reddit的<a href="https://www.reddit.com/r/arduino/comments/3ljko0/autoconnecting_android_phone_to_arduino_through/" target="_blank" rel="nofollow">“Auto-connecting Android phone to Arduino through Bluetooth"討論串</a>看來，恐怕不行。</p>
+<p>thanks,<br>
+jeffrey</p>
+				</div><!-- .comment-content -->
+
+							</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+		<li id="comment-939888" class="comment even thread-odd thread-alt depth-1 parent">
+			<article id="div-comment-939888" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="./HC-05與HC-06藍牙模組補充說明（一） - 網昱多媒體_files/a92670f7f2dd775c2b6dd893e77f406d" srcset="http://1.gravatar.com/avatar/a92670f7f2dd775c2b6dd893e77f406d?s=120&amp;d=retro&amp;r=g 2x" class="avatar avatar-60 photo" height="60" width="60">						<b class="fn">JimLu</b> <span class="says">說：</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://swf.com.tw/?p=693#comment-939888">
+							<time datetime="2016-03-17T01:51:39+00:00">
+								2016/03/17 at 1:51 上午							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Jeffery您好，<br>
+我照著書上做，也來到您的官網來把BT這兩篇認真的看完，<br>
+然後有兩個小問題想跟您請教：<br>
+1.我照著書上的CODE下去跑，AccessPort也Open了，但是都沒有反應？連setup()丟過來的"BT is ready"，都不會收到？於是我再去爬其它人的CODE(當中有提到MAX_BTCMDLEN…但應該跟這個無關哩？)，照抄上來+微調，居然正常了！然後我再把您的CODE貼回來跑，也正常了！SEND跟RECV都沒有問題！我完全一整個…查不出原因…您能幫忙猜猜BUG在哪嗎？我不知道這種ISSUE會不會再出現…想知道原因~<br>
+2.網路上買來的HC-05，它的肚子有包一圈透明熱縮管保護，所以我無法量測那個1K的電阻，像這樣的透明熱縮管保護，我需要保留它嗎？還是要剪掉？</p>
+<p>謝謝Jeffery<br>
+Best Regards<br>
+Jim Lu</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel="nofollow" class="comment-reply-link btn btn-sm btn-default" href="http://swf.com.tw/?p=693&amp;replytocom=939888#respond" onclick="return addComment.moveForm( &quot;div-comment-939888&quot;, &quot;939888&quot;, &quot;respond&quot;, &quot;693&quot; )" aria-label="回覆 JimLu" style="display: inline;">回覆</a></div>			</article><!-- .comment-body -->
+<ol class="children">
+		<li id="comment-939894" class="comment byuser comment-author-administrator bypostauthor odd alt depth-2">
+			<article id="div-comment-939894" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="./HC-05與HC-06藍牙模組補充說明（一） - 網昱多媒體_files/3ded6f1f06d42ba142f7e7ce17855b79" srcset="http://0.gravatar.com/avatar/3ded6f1f06d42ba142f7e7ce17855b79?s=120&amp;d=retro&amp;r=g 2x" class="avatar avatar-60 photo" height="60" width="60">						<b class="fn"><a href="http://swf.com.tw/" rel="external nofollow" class="url">cubie</a></b> <span class="says">說：</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://swf.com.tw/?p=693#comment-939894">
+							<time datetime="2016-03-17T04:18:54+00:00">
+								2016/03/17 at 4:18 上午							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>hi jim:</p>
+<p>除了透過AT命令設置藍牙模組的工作型態之外，序列通訊程式沒有辦法去「微調」藍牙的運作模式。我沒有遇過你提到的狀況，我也覺得很奇怪。對Arduino來說，有線序列連接和藍牙無線連接，兩者並沒有差別。無法收送訊號通常都是TxD和RxD腳接反，或者通訊速率有誤。</p>
+<p>熱縮管可以不用保留，就像Arduino控制板本身，以及多數週邊模組一樣，它們也都沒有保護膜。</p>
+<p>thanks,<br>
+jeffrey</p>
+				</div><!-- .comment-content -->
+
+							</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+		<li id="comment-939904" class="comment even thread-even depth-1 parent">
+			<article id="div-comment-939904" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="./HC-05與HC-06藍牙模組補充說明（一） - 網昱多媒體_files/a92670f7f2dd775c2b6dd893e77f406d" srcset="http://1.gravatar.com/avatar/a92670f7f2dd775c2b6dd893e77f406d?s=120&amp;d=retro&amp;r=g 2x" class="avatar avatar-60 photo" height="60" width="60">						<b class="fn">JimLu</b> <span class="says">說：</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://swf.com.tw/?p=693#comment-939904">
+							<time datetime="2016-03-17T14:07:33+00:00">
+								2016/03/17 at 2:07 下午							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>Dear Jeffery,</p>
+<p>Thanks for the reply!!<br>
+我找到Issue了!!Tx跟Rx接反了，我看了一下SoftwareSerialExample的Source code的說明，它提到了<br>
+ The circuit:<br>
+ * RX is digital pin 10 (connect to TX of other device)<br>
+ * TX is digital pin 11 (connect to RX of other device)<br>
+我把HC-05的Rx接到D11,HC-05的Tx接到D10, 然後我在Initial的呼叫寫成醬子：<br>
+SoftwareSerial BTSerial(11,10); //Rx , Tx<br>
+這樣子不會WORK，<br>
+我把它們對調之後=&gt;SoftwareSerial BTSerial(10,11); //Rx , Tx<br>
+就WORK了!!(搭配您的 BT APK , 改成<br>
+void loop() {<br>
+  if(BTSerial.available())<br>
+  {<br>
+    val = BTSerial.read();<br>
+    if(val==’s’)<br>
+      digitalWrite(ledPin,LOW);<br>
+    else<br>
+      digitalWrite(ledPin,HIGH);<br>
+  }<br>
+}</p>
+<p>變成按 ‘s’ 關燈(LED 13) , 按前後左右會亮燈,<br>
+跟您update 一下status. 謝謝回覆!!(而且是半夜4點半~XD)</p>
+<p>Best Regards<br>
+Jim Lu</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel="nofollow" class="comment-reply-link btn btn-sm btn-default" href="http://swf.com.tw/?p=693&amp;replytocom=939904#respond" onclick="return addComment.moveForm( &quot;div-comment-939904&quot;, &quot;939904&quot;, &quot;respond&quot;, &quot;693&quot; )" aria-label="回覆 JimLu" style="display: inline;">回覆</a></div>			</article><!-- .comment-body -->
+<ol class="children">
+		<li id="comment-939917" class="comment byuser comment-author-administrator bypostauthor odd alt depth-2">
+			<article id="div-comment-939917" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="./HC-05與HC-06藍牙模組補充說明（一） - 網昱多媒體_files/3ded6f1f06d42ba142f7e7ce17855b79" srcset="http://0.gravatar.com/avatar/3ded6f1f06d42ba142f7e7ce17855b79?s=120&amp;d=retro&amp;r=g 2x" class="avatar avatar-60 photo" height="60" width="60">						<b class="fn"><a href="http://swf.com.tw/" rel="external nofollow" class="url">cubie</a></b> <span class="says">說：</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://swf.com.tw/?p=693#comment-939917">
+							<time datetime="2016-03-17T22:37:17+00:00">
+								2016/03/17 at 10:37 下午							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>感謝告知！</p>
+<p>thanks,<br>
+jeffrey</p>
+				</div><!-- .comment-content -->
+
+							</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+		<li id="comment-940259" class="comment even thread-odd thread-alt depth-1 parent">
+			<article id="div-comment-940259" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="./HC-05與HC-06藍牙模組補充說明（一） - 網昱多媒體_files/c3f2e4e26ee83b9da57320931e426618" srcset="http://0.gravatar.com/avatar/c3f2e4e26ee83b9da57320931e426618?s=120&amp;d=retro&amp;r=g 2x" class="avatar avatar-60 photo" height="60" width="60">						<b class="fn">偉偉</b> <span class="says">說：</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://swf.com.tw/?p=693#comment-940259">
+							<time datetime="2016-03-24T18:32:10+00:00">
+								2016/03/24 at 6:32 下午							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>老師你好~我想要請問一下~有辦法在arduino上面寫一套程式辨識連芽是否有連接嗎，是HC-05使否有連接手機，如果有或沒有都執行一個動作那樣。謝謝</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel="nofollow" class="comment-reply-link btn btn-sm btn-default" href="http://swf.com.tw/?p=693&amp;replytocom=940259#respond" onclick="return addComment.moveForm( &quot;div-comment-940259&quot;, &quot;940259&quot;, &quot;respond&quot;, &quot;693&quot; )" aria-label="回覆 偉偉" style="display: inline;">回覆</a></div>			</article><!-- .comment-body -->
+<ol class="children">
+		<li id="comment-940264" class="comment byuser comment-author-administrator bypostauthor odd alt depth-2">
+			<article id="div-comment-940264" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="./HC-05與HC-06藍牙模組補充說明（一） - 網昱多媒體_files/3ded6f1f06d42ba142f7e7ce17855b79" srcset="http://0.gravatar.com/avatar/3ded6f1f06d42ba142f7e7ce17855b79?s=120&amp;d=retro&amp;r=g 2x" class="avatar avatar-60 photo" height="60" width="60">						<b class="fn"><a href="http://swf.com.tw/" rel="external nofollow" class="url">cubie</a></b> <span class="says">說：</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://swf.com.tw/?p=693#comment-940264">
+							<time datetime="2016-03-25T00:48:25+00:00">
+								2016/03/25 at 12:48 上午							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>hi wayne:</p>
+<p>請參閱<a href="http://swf.com.tw/?p=750&amp;cpage=1#comment-939000" rel="nofollow">這個留言</a>。</p>
+<p>thanks,<br>
+jeffrey</p>
+				</div><!-- .comment-content -->
+
+							</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+		<li id="comment-952260" class="comment even thread-even depth-1 parent">
+			<article id="div-comment-952260" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="./HC-05與HC-06藍牙模組補充說明（一） - 網昱多媒體_files/870b892006e46f17ea2288c9d3b9af53" srcset="http://2.gravatar.com/avatar/870b892006e46f17ea2288c9d3b9af53?s=120&amp;d=retro&amp;r=g 2x" class="avatar avatar-60 photo" height="60" width="60">						<b class="fn">郭閔翔</b> <span class="says">說：</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://swf.com.tw/?p=693#comment-952260">
+							<time datetime="2016-05-20T21:10:16+00:00">
+								2016/05/20 at 9:10 下午							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>您好!!<br>
+請問HC-05或BC-04可以達成1對多(或對7)的功能嗎??如果不行我該選購什麼模組才可以呢??</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel="nofollow" class="comment-reply-link btn btn-sm btn-default" href="http://swf.com.tw/?p=693&amp;replytocom=952260#respond" onclick="return addComment.moveForm( &quot;div-comment-952260&quot;, &quot;952260&quot;, &quot;respond&quot;, &quot;693&quot; )" aria-label="回覆 郭閔翔" style="display: inline;">回覆</a></div>			</article><!-- .comment-body -->
+<ol class="children">
+		<li id="comment-952263" class="comment byuser comment-author-administrator bypostauthor odd alt depth-2">
+			<article id="div-comment-952263" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="./HC-05與HC-06藍牙模組補充說明（一） - 網昱多媒體_files/3ded6f1f06d42ba142f7e7ce17855b79" srcset="http://0.gravatar.com/avatar/3ded6f1f06d42ba142f7e7ce17855b79?s=120&amp;d=retro&amp;r=g 2x" class="avatar avatar-60 photo" height="60" width="60">						<b class="fn"><a href="http://swf.com.tw/" rel="external nofollow" class="url">cubie</a></b> <span class="says">說：</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://swf.com.tw/?p=693#comment-952263">
+							<time datetime="2016-05-21T01:11:49+00:00">
+								2016/05/21 at 1:11 上午							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>hi 小郭：</p>
+<p>理論上一個藍牙主控端可同時連接七個藍牙從端裝置，但實際可連線數需視藍牙裝置的韌體或電腦驅動程式而定。HC-05模組只能一對一連線，某些採用CSR晶片的USB藍牙連接器，只能同時連接5個裝置。</p>
+<p>蘋果的這一篇技術支援文件<a href="https://support.apple.com/en-us/HT201171#multiple" target="_blank" rel="nofollow">Connect multiple Bluetooth devices to one computer</a>也有提到，實務上，電腦最多只同時連接3到4個藍牙裝置，尤其在頻繁傳輸數據的場合（如：連接藍牙音箱），可能要降低同時連線數。</p>
+<p>我不知道哪個藍牙模組可支援多個從端連線，但是，與其尋找這類型的模組，不如採用電腦（或樹莓派這種Linux微電腦）、智慧型手機或平板當作主控端，這樣就解決基本的多組連線問題了。</p>
+<p>have fun!<br>
+jeffrey</p>
+				</div><!-- .comment-content -->
+
+							</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+		<li id="comment-952564" class="comment even thread-odd thread-alt depth-1 parent">
+			<article id="div-comment-952564" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="./HC-05與HC-06藍牙模組補充說明（一） - 網昱多媒體_files/e336cd2f6eea8c261dc237c538984fc6" srcset="http://2.gravatar.com/avatar/e336cd2f6eea8c261dc237c538984fc6?s=120&amp;d=retro&amp;r=g 2x" class="avatar avatar-60 photo" height="60" width="60">						<b class="fn">詢問</b> <span class="says">說：</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://swf.com.tw/?p=693#comment-952564">
+							<time datetime="2016-05-26T13:02:18+00:00">
+								2016/05/26 at 1:02 下午							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>趙老师：筆記本電腦如果沒有藍牙接口，到網上買個usb藍牙適配器可以和arduino藍牙串口模塊通信嗎？</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel="nofollow" class="comment-reply-link btn btn-sm btn-default" href="http://swf.com.tw/?p=693&amp;replytocom=952564#respond" onclick="return addComment.moveForm( &quot;div-comment-952564&quot;, &quot;952564&quot;, &quot;respond&quot;, &quot;693&quot; )" aria-label="回覆 詢問" style="display: inline;">回覆</a></div>			</article><!-- .comment-body -->
+<ol class="children">
+		<li id="comment-952648" class="comment byuser comment-author-administrator bypostauthor odd alt depth-2">
+			<article id="div-comment-952648" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="./HC-05與HC-06藍牙模組補充說明（一） - 網昱多媒體_files/3ded6f1f06d42ba142f7e7ce17855b79" srcset="http://0.gravatar.com/avatar/3ded6f1f06d42ba142f7e7ce17855b79?s=120&amp;d=retro&amp;r=g 2x" class="avatar avatar-60 photo" height="60" width="60">						<b class="fn"><a href="http://swf.com.tw/" rel="external nofollow" class="url">cubie</a></b> <span class="says">說：</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://swf.com.tw/?p=693#comment-952648">
+							<time datetime="2016-05-26T23:43:55+00:00">
+								2016/05/26 at 11:43 下午							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>可以的。</p>
+<p>thanks,<br>
+jeffrey</p>
+				</div><!-- .comment-content -->
+
+							</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+		<li id="comment-954236" class="comment even thread-even depth-1 parent">
+			<article id="div-comment-954236" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="./HC-05與HC-06藍牙模組補充說明（一） - 網昱多媒體_files/b1f091aa70f7a75cdd7c6336adb468dd" srcset="http://2.gravatar.com/avatar/b1f091aa70f7a75cdd7c6336adb468dd?s=120&amp;d=retro&amp;r=g 2x" class="avatar avatar-60 photo" height="60" width="60">						<b class="fn"><a href="http://littlehann.cnblogs.com/" rel="external nofollow" class="url">littlehann</a></b> <span class="says">說：</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://swf.com.tw/?p=693#comment-954236">
+							<time datetime="2016-06-30T21:08:41+00:00">
+								2016/06/30 at 9:08 下午							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>老師您好，我購買的HC-05是您發的規格裏的第一個<br>
+<a href="./HC-05與HC-06藍牙模組補充說明（一） - 網昱多媒體_files/hc-05_hc-06_front.jpg" rel="nofollow">http://swf.com.tw/images/books/arduino/2ed/hc-05_hc-06_front.jpg</a><br>
+是沒有key按鍵接腳的，請問我該怎樣接通key使其置高電位呢，我將key引腳和pin2相連，並在setup的時候write HIGH也無法使我的HC-05進入AT模式<br>
+是否有辦法用這種規格HC-05進行AT模式設置呢？</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel="nofollow" class="comment-reply-link btn btn-sm btn-default" href="http://swf.com.tw/?p=693&amp;replytocom=954236#respond" onclick="return addComment.moveForm( &quot;div-comment-954236&quot;, &quot;954236&quot;, &quot;respond&quot;, &quot;693&quot; )" aria-label="回覆 littlehann" style="display: inline;">回覆</a></div>			</article><!-- .comment-body -->
+<ol class="children">
+		<li id="comment-954239" class="comment byuser comment-author-administrator bypostauthor odd alt depth-2">
+			<article id="div-comment-954239" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="./HC-05與HC-06藍牙模組補充說明（一） - 網昱多媒體_files/3ded6f1f06d42ba142f7e7ce17855b79" srcset="http://0.gravatar.com/avatar/3ded6f1f06d42ba142f7e7ce17855b79?s=120&amp;d=retro&amp;r=g 2x" class="avatar avatar-60 photo" height="60" width="60">						<b class="fn"><a href="http://swf.com.tw/" rel="external nofollow" class="url">cubie</a></b> <span class="says">說：</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://swf.com.tw/?p=693#comment-954239">
+							<time datetime="2016-06-30T23:34:57+00:00">
+								2016/06/30 at 11:34 下午							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>hi hann:</p>
+<p>請問你的藍芽模塊上的key引腳是原本就有的嗎？還是你自行從34腳焊接出來的？如果是前者，請先用電錶確認Key引腳是否與34腳相連。</p>
+<p>若是與34腳相連，但是接高電位卻無法讓它進入AT模式…這就要向賣家索取規格書才能確認了。</p>
+<p>thanks,<br>
+jeffrey</p>
+				</div><!-- .comment-content -->
+
+							</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+		<li id="comment-956087" class="comment even thread-odd thread-alt depth-1 parent">
+			<article id="div-comment-956087" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="./HC-05與HC-06藍牙模組補充說明（一） - 網昱多媒體_files/f84dc108db510e78b62a094b4e10b352" srcset="http://0.gravatar.com/avatar/f84dc108db510e78b62a094b4e10b352?s=120&amp;d=retro&amp;r=g 2x" class="avatar avatar-60 photo" height="60" width="60">						<b class="fn">吳致毅</b> <span class="says">說：</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://swf.com.tw/?p=693#comment-956087">
+							<time datetime="2016-07-08T17:59:40+00:00">
+								2016/07/08 at 5:59 下午							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>請問一下HC-05可以達到主對從的連結是1對多嗎?</p>
+<p>另外請問一下，HC-08也可以達到同樣的效果嗎?</p>
+<p>謝謝~</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel="nofollow" class="comment-reply-link btn btn-sm btn-default" href="http://swf.com.tw/?p=693&amp;replytocom=956087#respond" onclick="return addComment.moveForm( &quot;div-comment-956087&quot;, &quot;956087&quot;, &quot;respond&quot;, &quot;693&quot; )" aria-label="回覆 吳致毅" style="display: inline;">回覆</a></div>			</article><!-- .comment-body -->
+<ol class="children">
+		<li id="comment-956140" class="comment byuser comment-author-administrator bypostauthor odd alt depth-2">
+			<article id="div-comment-956140" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="./HC-05與HC-06藍牙模組補充說明（一） - 網昱多媒體_files/3ded6f1f06d42ba142f7e7ce17855b79" srcset="http://0.gravatar.com/avatar/3ded6f1f06d42ba142f7e7ce17855b79?s=120&amp;d=retro&amp;r=g 2x" class="avatar avatar-60 photo" height="60" width="60">						<b class="fn"><a href="http://swf.com.tw/" rel="external nofollow" class="url">cubie</a></b> <span class="says">說：</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://swf.com.tw/?p=693#comment-956140">
+							<time datetime="2016-07-13T04:06:07+00:00">
+								2016/07/13 at 4:06 上午							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>hi 小吳：</p>
+<p>請參閱<a href="http://swf.com.tw/?p=693&amp;cpage=1#comment-952263" target="_blank" rel="nofollow">這一篇留言</a>，謝謝！</p>
+<p>thanks,<br>
+jeffrey</p>
+				</div><!-- .comment-content -->
+
+							</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+		<li id="comment-956863" class="comment even thread-even depth-1 parent">
+			<article id="div-comment-956863" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="./HC-05與HC-06藍牙模組補充說明（一） - 網昱多媒體_files/4328fd84b81b2615b495af0bfa5dce73" srcset="http://1.gravatar.com/avatar/4328fd84b81b2615b495af0bfa5dce73?s=120&amp;d=retro&amp;r=g 2x" class="avatar avatar-60 photo" height="60" width="60">						<b class="fn">potterystar</b> <span class="says">說：</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://swf.com.tw/?p=693#comment-956863">
+							<time datetime="2016-08-13T11:42:46+00:00">
+								2016/08/13 at 11:42 上午							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>您好<br>
+請問一般手機收音及傳送訊號(音樂)給藍芽耳機的功能,是否可以用mic(收音)-&gt;Arduino-&gt;藍芽模組-&gt;藍芽耳機?<br>
+因為馬偕醫院有開發一個[智慧聽 APP],但是老人家不太會用手機,所以想設計看看簡單的裝置.</p>
+<p>謝謝</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel="nofollow" class="comment-reply-link btn btn-sm btn-default" href="http://swf.com.tw/?p=693&amp;replytocom=956863#respond" onclick="return addComment.moveForm( &quot;div-comment-956863&quot;, &quot;956863&quot;, &quot;respond&quot;, &quot;693&quot; )" aria-label="回覆 potterystar" style="display: inline;">回覆</a></div>			</article><!-- .comment-body -->
+<ol class="children">
+		<li id="comment-956929" class="comment byuser comment-author-administrator bypostauthor odd alt depth-2">
+			<article id="div-comment-956929" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="./HC-05與HC-06藍牙模組補充說明（一） - 網昱多媒體_files/3ded6f1f06d42ba142f7e7ce17855b79" srcset="http://0.gravatar.com/avatar/3ded6f1f06d42ba142f7e7ce17855b79?s=120&amp;d=retro&amp;r=g 2x" class="avatar avatar-60 photo" height="60" width="60">						<b class="fn"><a href="http://swf.com.tw/" rel="external nofollow" class="url">cubie</a></b> <span class="says">說：</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://swf.com.tw/?p=693#comment-956929">
+							<time datetime="2016-08-14T11:11:42+00:00">
+								2016/08/14 at 11:11 上午							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>hi potterystar:</p>
+<p>如果你需要的功能是「無線傳遞聲音」，那就不一定要使用藍牙，你可以：</p>
+<p>1. 使用無線電麥克風搭配收音機：<br>
+2. 我記得市面上一種類似「對講機」功能的藍牙耳機麥克風，可以互連通話：<br>
+3. 本文使用的藍牙模組是「序列通訊模組」，傳送和接收聲音，你需要的是支援A2DP協定的立體聲模組。普通的Arduino（8位元處理器）無法提供高音質的即時壓縮、解壓縮功能。</p>
+<p>thanks,<br>
+jeffrey</p>
+				</div><!-- .comment-content -->
+
+							</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+		<li id="comment-961143" class="comment even thread-odd thread-alt depth-1 parent">
+			<article id="div-comment-961143" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="./HC-05與HC-06藍牙模組補充說明（一） - 網昱多媒體_files/5582a1c5d8c6ad8f8e408d760bfd1053" srcset="http://2.gravatar.com/avatar/5582a1c5d8c6ad8f8e408d760bfd1053?s=120&amp;d=retro&amp;r=g 2x" class="avatar avatar-60 photo" height="60" width="60">						<b class="fn">bruce</b> <span class="says">說：</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://swf.com.tw/?p=693#comment-961143">
+							<time datetime="2016-10-21T11:27:26+00:00">
+								2016/10/21 at 11:27 上午							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>您好<br>
+    請問一種情境,若把Arduino接上BT-05,然後把CAMERA拍到的相片與蒐集到的SENSOR數據放到Arduino 的sd memory,後,透過手機配對BT-05, 將相片檔案與SENSOR數據存到手機, 這樣BT-05有辦法做到嗎? 還是需要其他有FTP profile等傳送檔案之類的profile,才能辦得到?</p>
+<p>謝謝</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel="nofollow" class="comment-reply-link btn btn-sm btn-default" href="http://swf.com.tw/?p=693&amp;replytocom=961143#respond" onclick="return addComment.moveForm( &quot;div-comment-961143&quot;, &quot;961143&quot;, &quot;respond&quot;, &quot;693&quot; )" aria-label="回覆 bruce" style="display: inline;">回覆</a></div>			</article><!-- .comment-body -->
+<ol class="children">
+		<li id="comment-961155" class="comment byuser comment-author-administrator bypostauthor odd alt depth-2">
+			<article id="div-comment-961155" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="./HC-05與HC-06藍牙模組補充說明（一） - 網昱多媒體_files/3ded6f1f06d42ba142f7e7ce17855b79" srcset="http://0.gravatar.com/avatar/3ded6f1f06d42ba142f7e7ce17855b79?s=120&amp;d=retro&amp;r=g 2x" class="avatar avatar-60 photo" height="60" width="60">						<b class="fn"><a href="http://swf.com.tw/" rel="external nofollow" class="url">cubie</a></b> <span class="says">說：</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://swf.com.tw/?p=693#comment-961155">
+							<time datetime="2016-10-21T22:20:52+00:00">
+								2016/10/21 at 10:20 下午							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>應該辦得到，只是藍牙序列傳輸速度不快，用戶體驗可能不好；有影像處裡相關的需求，建議你採用樹莓派之類的高階板子，開發起來會更加得心應手。</p>
+<p>thanks,<br>
+jeffrey</p>
+				</div><!-- .comment-content -->
+
+							</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+		<li id="comment-963974" class="comment even thread-even depth-1 parent">
+			<article id="div-comment-963974" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="./HC-05與HC-06藍牙模組補充說明（一） - 網昱多媒體_files/753bf16496b9eee3452e03129f5ed2e9" srcset="http://1.gravatar.com/avatar/753bf16496b9eee3452e03129f5ed2e9?s=120&amp;d=retro&amp;r=g 2x" class="avatar avatar-60 photo" height="60" width="60">						<b class="fn">王柏翰</b> <span class="says">說：</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://swf.com.tw/?p=693#comment-963974">
+							<time datetime="2017-03-05T19:53:52+00:00">
+								2017/03/05 at 7:53 下午							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>老師您好<br>
+我現在就讀高職 要製作專題報告<br>
+我想製作透過藍芽用手機APP控制的遙控汽車<br>
+利用HC-05或HC-06連接8051來控制馬達<br>
+可是網路上大部分都是使用Arduino 希望您可以提供一些方向或作法嗎?</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel="nofollow" class="comment-reply-link btn btn-sm btn-default" href="http://swf.com.tw/?p=693&amp;replytocom=963974#respond" onclick="return addComment.moveForm( &quot;div-comment-963974&quot;, &quot;963974&quot;, &quot;respond&quot;, &quot;693&quot; )" aria-label="回覆 王柏翰" style="display: inline;">回覆</a></div>			</article><!-- .comment-body -->
+<ol class="children">
+		<li id="comment-963977" class="comment byuser comment-author-administrator bypostauthor odd alt depth-2">
+			<article id="div-comment-963977" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="./HC-05與HC-06藍牙模組補充說明（一） - 網昱多媒體_files/3ded6f1f06d42ba142f7e7ce17855b79" srcset="http://0.gravatar.com/avatar/3ded6f1f06d42ba142f7e7ce17855b79?s=120&amp;d=retro&amp;r=g 2x" class="avatar avatar-60 photo" height="60" width="60">						<b class="fn"><a href="http://swf.com.tw/" rel="external nofollow" class="url">cubie</a></b> <span class="says">說：</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://swf.com.tw/?p=693#comment-963977">
+							<time datetime="2017-03-05T23:18:37+00:00">
+								2017/03/05 at 11:18 下午							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>無論哪一種微電腦控制板，連接HC-05藍牙模組的電路和程式原理都一樣。你只要會寫8051的序列通訊程式，即可透過HC-05把有線序列資料轉換成藍牙無線通訊。</p>
+<p>詳細的8051序列通訊程式，再麻煩你參閱相關書籍或文件，或者請教專題指導老師。</p>
+<p>thanks,<br>
+jeffrey</p>
+				</div><!-- .comment-content -->
+
+							</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+		<li id="comment-963982" class="comment even thread-odd thread-alt depth-1 parent">
+			<article id="div-comment-963982" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="./HC-05與HC-06藍牙模組補充說明（一） - 網昱多媒體_files/753bf16496b9eee3452e03129f5ed2e9" srcset="http://1.gravatar.com/avatar/753bf16496b9eee3452e03129f5ed2e9?s=120&amp;d=retro&amp;r=g 2x" class="avatar avatar-60 photo" height="60" width="60">						<b class="fn">王柏翰</b> <span class="says">說：</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://swf.com.tw/?p=693#comment-963982">
+							<time datetime="2017-03-06T22:59:16+00:00">
+								2017/03/06 at 10:59 下午							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>謝謝老師<br>
+我還想在提問<br>
+在您的《使用App Inventor 2製作的機器昆蟲藍牙控制器之小小改版》裡面有使用AI2來控制輸入單晶片的指令"s" “w"<br>
+而8051的接腳能控制的只有0或1 今天我有問指導老師 老師是說那些英文字是有正式規格的 例如輸入F =0000 0001<br>
+接收到訊息後利用陣列來引導我想執行的指令 可是我上網找卻沒有與規格有關的相關資料<br>
+希望您可以說明一下 app傳送訊息給藍芽 藍芽傳送給晶片到裝置執行動作的的流程 麻煩您了</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel="nofollow" class="comment-reply-link btn btn-sm btn-default" href="http://swf.com.tw/?p=693&amp;replytocom=963982#respond" onclick="return addComment.moveForm( &quot;div-comment-963982&quot;, &quot;963982&quot;, &quot;respond&quot;, &quot;693&quot; )" aria-label="回覆 王柏翰" style="display: inline;">回覆</a></div>			</article><!-- .comment-body -->
+<ol class="children">
+		<li id="comment-963983" class="comment byuser comment-author-administrator bypostauthor odd alt depth-2">
+			<article id="div-comment-963983" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="./HC-05與HC-06藍牙模組補充說明（一） - 網昱多媒體_files/3ded6f1f06d42ba142f7e7ce17855b79" srcset="http://0.gravatar.com/avatar/3ded6f1f06d42ba142f7e7ce17855b79?s=120&amp;d=retro&amp;r=g 2x" class="avatar avatar-60 photo" height="60" width="60">						<b class="fn"><a href="http://swf.com.tw/" rel="external nofollow" class="url">cubie</a></b> <span class="says">說：</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://swf.com.tw/?p=693#comment-963983">
+							<time datetime="2017-03-06T23:57:55+00:00">
+								2017/03/06 at 11:57 下午							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>序列埠收到的資料是一堆0跟1沒錯，電腦裡面的所有數據也都是0和1組成的，字元’A’的ASCII編碼的十進位是65, 16進位是41，用二進位解讀就是01000001。</p>
+<p>你用8051的C語言宣告一個char類型的陣列，存入的序列資料就是字元值，例如，存入01000001就是存入’A’，當然也能看成數字65，實際要看你自己的程式如何取解讀資料。</p>
+<p>建議你先不要管藍牙怎麼接，也先不要煩惱App怎麼寫。先在完成8051序列埠與電腦通訊的實驗，你就能初步認識整個控制流程。 </p>
+<p>thanks,<br>
+jeffrey</p>
+				</div><!-- .comment-content -->
+
+							</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+		<li id="comment-963988" class="comment even thread-even depth-1">
+			<article id="div-comment-963988" class="comment-body">
+				<footer class="comment-meta">
+					<div class="comment-author vcard">
+						<img alt="" src="./HC-05與HC-06藍牙模組補充說明（一） - 網昱多媒體_files/753bf16496b9eee3452e03129f5ed2e9" srcset="http://1.gravatar.com/avatar/753bf16496b9eee3452e03129f5ed2e9?s=120&amp;d=retro&amp;r=g 2x" class="avatar avatar-60 photo" height="60" width="60">						<b class="fn">王柏翰</b> <span class="says">說：</span>					</div><!-- .comment-author -->
+
+					<div class="comment-metadata">
+						<a href="http://swf.com.tw/?p=693#comment-963988">
+							<time datetime="2017-03-07T21:56:42+00:00">
+								2017/03/07 at 9:56 下午							</time>
+						</a>
+											</div><!-- .comment-metadata -->
+
+									</footer><!-- .comment-meta -->
+
+				<div class="comment-content">
+					<p>好的 謝謝老師</p>
+				</div><!-- .comment-content -->
+
+				<div class="reply"><a rel="nofollow" class="comment-reply-link btn btn-sm btn-default" href="http://swf.com.tw/?p=693&amp;replytocom=963988#respond" onclick="return addComment.moveForm( &quot;div-comment-963988&quot;, &quot;963988&quot;, &quot;respond&quot;, &quot;693&quot; )" aria-label="回覆 王柏翰" style="display: inline;">回覆</a></div>			</article><!-- .comment-body -->
+</li><!-- #comment-## -->
+		</ol><!-- .comment-list -->
+
+		
+	
+	
+		<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">發表迴響 <small><a rel="nofollow" id="cancel-comment-reply-link" href="http://swf.com.tw/?p=693#respond" style="display:none;">取消回覆</a></small></h3>			<form action="http://swf.com.tw/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate="">
+				<p class="comment-notes"><span id="email-notes">你的電子郵件位址並不會被公開。</span> 必要欄位標記為 <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">迴響</label> <fieldset id="uvisrsty" class="gabcaptchafs"><legend>Anti-spam protection</legend><!--Turing test using Gab Captcha 2 v1.0.20 (http://www.gabsoftware.com/products/scripts/gabcaptcha2/)--><p>發表回應之前，請先輸入下列四個紅色英文字母：</p><label for="commentturing"><span class="gc2_0">H</span><span class="gc2_1">T</span><span class="gc2_2">P</span><span class="gc2_3">Q</span><span class="gc2_4">I</span><span class="gc2_5">B</span><span class="gc2_6">P</span><span class="gc2_7">H</span><span class="gc2_8">P</span><span class="gc2_9">W</span><span class="gc2_10">Y</span><span class="gc2_11">F</span><span class="gc2_12">F</span><span class="gc2_13">R</span><span class="gc2_14">X</span><span class="gc2_15">K</span></label><input type="text" id="commentturing" name="CommentTuring" required="required" maxlength="16" class="textField"><br><input type="hidden" id="commentsecret" name="CommentSecret" value="NDNkZDJiMzExMjQ4Yzg1NjczMWZmMjQwMjRlYjFlNmQ="><br><a href="http://www.gabsoftware.com/products/scripts/gabcaptcha2/" title="Click here for more information about Gab Captcha 2 v1.0.20" target="_blank" class="gabcaptchalc">Protected by <strong>Gab Captcha 2</strong></a></fieldset><textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" aria-required="true" required="required"></textarea></p><p class="comment-form-author"><label for="author">名稱 <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" aria-required="true" required="required"></p>
+<p class="comment-form-email"><label for="email">電子郵件 <span class="required">*</span></label> <input id="email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" aria-required="true" required="required"></p>
+<p class="comment-form-url"><label for="url">個人網站</label> <input id="url" name="url" type="url" value="" size="30" maxlength="200"></p>
+
+			
+
+			<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit btn btn-default" value="張貼迴響" style="display: inline-block;"> <input type="hidden" name="comment_post_ID" value="693" id="comment_post_ID">
+<input type="hidden" name="comment_parent" id="comment_parent" value="0">
+</p>
+					<fieldset id="uvisrsty" class="gabcaptchafs"></fieldset>
+
+				
+			<noscript>&lt;p class="gabcaptchajd"&gt;Our anti-spam protection requires that you enable JavaScript in your browser to be able to comment!&lt;/p&gt;</noscript>
+			<script type="text/javascript">
+			/* <![CDATA[ */
+
+			//return the element specified by id
+			function gabcaptcha2_getElementByIdUniversal( id )
+			{
+				var elem = null;
+				if( document.getElementById )
+				{
+					elem = document.getElementById( id );
+				}
+				else
+				{
+					elem = document.all[ id ];
+				}
+				return elem;
+			}
+
+			//load xml from string
+			function loadXMLString( txt )
+			{
+				if (window.DOMParser)
+				{
+					parser=new DOMParser();
+					xmlDoc=parser.parseFromString( txt, "text/xml" );
+				}
+				else // Internet Explorer
+				{
+					xmlDoc=new ActiveXObject( "Microsoft.XMLDOM" );
+					xmlDoc.async = "false";
+					xmlDoc.loadXML( txt );
+				}
+				return xmlDoc;
+			}
+
+
+			// IE HACK: Define _importNode for IE since it doesnt support importNode
+			if( ! document.importNode )
+			{
+				document._importNode = function( oNode, bImportChildren )
+				{
+					var oNew;
+					if( oNode.nodeType == 1 )
+					{
+						oNew = document.createElement( oNode.nodeName );
+						for( var i = 0; i < oNode.attributes.length; i++ )
+						{
+							if( oNode.attributes[i].nodeValue != null && oNode.attributes[i].nodeValue != '' )
+							{
+								var attrName = oNode.attributes[i].name;
+								if( attrName == "class" )
+								{
+									oNew.setAttribute( "className", oNode.attributes[i].value );
+								}
+								//else
+								//{
+									oNew.setAttribute( attrName, oNode.attributes[i].value );
+								//}
+							}
+						}
+						if( oNode.style != null && oNode.style.cssText != null )
+						{
+							oNew.style.cssText = oNode.style.cssText;
+						}
+					}
+					else if( oNode.nodeType == 3 )
+					{
+						oNew = document.createTextNode( oNode.nodeValue );
+					}
+					else if( oNode.nodeType == 8 )
+					{
+						oNew = document.createComment( oNode.nodeValue );
+					}
+					else
+					{
+						oNew = document.createTextNode(''); // Skip anything else and prepare to return an empty text node
+					}
+					if( bImportChildren && oNode.hasChildNodes() )
+					{
+						for( var oChild = oNode.firstChild; oChild; oChild = oChild.nextSibling )
+						{
+							oNew.appendChild( document._importNode( oChild, true ) );
+						}
+					}
+					return oNew;
+				}
+			}
+			// IE HACK (end)
+
+
+			var captchatarget = gabcaptcha2_getElementByIdUniversal( 'uvisrsty' );
+
+			//legend
+			var node = document.createElement( "legend" );
+			var nodetext = document.createTextNode( "Anti-spam protection" );
+			node.appendChild(nodetext);
+			captchatarget.appendChild( node );
+
+			//a comment
+			node = document.createComment("Turing test using Gab Captcha 2 v1.0.20 (http://www.gabsoftware.com/products/scripts/gabcaptcha2/)");
+			captchatarget.appendChild( node );
+
+			//a paragraph
+			node = document.createElement( "p" );
+			nodetext = document.createTextNode( "發表回應之前，請先輸入下列四個紅色英文字母：" );
+			node.appendChild(nodetext);
+			captchatarget.appendChild( node );
+
+			//a label
+			node = document.createElement( "label" );
+			node.setAttribute( "for", "commentturing" );
+			var xml = loadXMLString( '<root xmlns="http://www.w3.org/1999/xhtml"><span class="gc2_0">H</span><span class="gc2_1">T</span><span class="gc2_2">P</span><span class="gc2_3">Q</span><span class="gc2_4">I</span><span class="gc2_5">B</span><span class="gc2_6">P</span><span class="gc2_7">H</span><span class="gc2_8">P</span><span class="gc2_9">W</span><span class="gc2_10">Y</span><span class="gc2_11">F</span><span class="gc2_12">F</span><span class="gc2_13">R</span><span class="gc2_14">X</span><span class="gc2_15">K</span></root>' );
+			var nodes = xml.documentElement.childNodes;
+			var external_node = null;
+			var local_node = null;
+			for( var i = 0, n = nodes.length; i < n; i++ )
+			{
+				/* import the node from the xml document */
+				external_node = nodes[i].cloneNode( true );
+				if( document.importNode )
+				{
+					local_node = document.importNode( external_node, true);
+					node.appendChild( local_node );
+				}
+				else
+				{
+					local_node = document._importNode( external_node, true);
+					node.appendChild( local_node );
+					node.innerHTML = node.innerHTML;
+				}
+			}
+			captchatarget.appendChild( node );
+
+			//input type=text
+			node = document.createElement( "input" );
+			node.setAttribute( "type", "text" );
+			node.setAttribute( "id", "commentturing" );
+			node.setAttribute( "name", "CommentTuring" );
+			node.setAttribute( "required", "required" );
+			node.setAttribute( "maxlength", "16" );
+			node.setAttribute( "class", "textField" );
+			
+			captchatarget.appendChild( node );
+
+			//br
+			node = document.createElement( "br" );
+			captchatarget.appendChild( node );
+
+			//input type=hidden
+			node = document.createElement( "input" );
+			node.setAttribute( "type", "hidden" );
+			node.setAttribute( "id", "commentsecret" );
+			node.setAttribute( "name", "CommentSecret" );
+			node.setAttribute( "value", "NDNkZDJiMzExMjQ4Yzg1NjczMWZmMjQwMjRlYjFlNmQ=" );
+			captchatarget.appendChild( node );
+
+			
+			
+				//br
+				node = document.createElement( "br" );
+				captchatarget.appendChild( node );
+
+				
+					//a link
+					node = document.createElement( "a" );
+					node.setAttribute( "href", "http://www.gabsoftware.com/products/scripts/gabcaptcha2/" );
+					node.setAttribute( "title", "Click here for more information about Gab Captcha 2 v1.0.20" );
+					node.setAttribute( "target", "_blank" );
+					nodetext = document.createTextNode( "Protected by " );
+					node.appendChild( nodetext );
+					var node2 = document.createElement( "strong" );
+					nodetext = document.createTextNode( "Gab Captcha 2" );
+					node2.appendChild( nodetext );
+					node.appendChild( node2 );
+
+				
+				//common instructions for link and span
+				node.setAttribute( "class", "gabcaptchalc" );
+				captchatarget.appendChild( node );
+
+				
+					//This is a legacy theme. We try to find the comment textarea and insert the captcha just before.
+					var commentField = gabcaptcha2_getElementByIdUniversal( 'comment' );
+					if( commentField == null )
+					{
+						//Try with the name attribute
+						var fields = document.getElementsByTagName( 'comment' );
+						if( fields.length > 0 )
+						{
+							commentField = fields[0];
+						}
+					}
+					if( commentField != null )
+					{
+						//we found the comment text area, so we insert the captcha right before it
+						var parentNode = commentField.parentNode;
+						parentNode.insertBefore( captchatarget, commentField );
+
+											}
+					else
+					{
+						//The comment text area wasn't found... The captcha should appear under the comment area.
+						//Not very pretty, but eh, shouldn't your theme be more up-to-date?
+					}
+
+				
+			
+			
+			/* ]]> */
+			</script>
+
+						</form>
+			</div><!-- #respond -->
+	
+</div><!-- #comments -->
+				<nav class="navigation post-navigation" role="navigation">
+		<h1 class="screen-reader-text">Post navigation</h1>
+		<div class="nav-links">
+			<div class="nav-previous"><a href="http://swf.com.tw/?p=689" rel="prev"><i class="fa fa-chevron-left"></i> App Inventor 2裡的全域變數和List（清單）元素</a></div><div class="nav-next"><a href="http://swf.com.tw/?p=705" rel="next">HC-05與HC-06藍牙模組補充說明（二）：連接電路 <i class="fa fa-chevron-right"></i></a></div>		</div><!-- .nav-links -->
+	</nav><!-- .navigation -->
+	
+		
+		</main><!-- #main -->
+	</div><!-- #primary -->
+
+</div>
+	<div id="secondary" class="widget-area col-sm-12 col-md-4" role="complementary">
+		<div class="well">
+						<aside id="search-4" class="widget widget_search">
+<form role="search" method="get" class="form-search" action="http://swf.com.tw/">
+  <div class="input-group">
+  	<label class="screen-reader-text" for="s">Search for:</label>
+    <input type="text" class="form-control search-query" placeholder="Search…" value="" name="s" title="Search for:">
+    <span class="input-group-btn">
+      <button type="submit" class="btn btn-default" name="submit" id="searchsubmit" value="Search" style=""><span class="glyphicon glyphicon-search"></span></button>
+    </span>
+  </div>
+</form></aside><aside id="bwp_recent_comments-8" class="widget bwp-rc-widget"><h3 class="widget-title">Recent Comments</h3>
+		<ul class="bwp-rc-ulist">
+<li class="recent-comment"><span class="recent-comment-avatar"><img alt="User Avatar" src="./HC-05與HC-06藍牙模組補充說明（一） - 網昱多媒體_files/3ded6f1f06d42ba142f7e7ce17855b79(1)" srcset="http://0.gravatar.com/avatar/3ded6f1f06d42ba142f7e7ce17855b79?s=80&amp;d=retro&amp;r=g 2x" class="avatar avatar-40 photo" height="40" width="40"></span><span class="recent-comment-single"><span class="recent-comment-author">cubie</span><br><span class="recent-comment-text"> { 正常情況下，藍牙模組只要一通電，就能讓手機或電腦搜尋到。你方便跟同學或朋友借用另一個模組測試比對嗎？ thanks, jeffrey } – </span> <a href="http://swf.com.tw/?p=712&amp;cpage=2#comment-964178" title="Comment on HC-05與HC-06藍牙模組補充說明（三）：使用Arduino設定AT命令"><br><strong>03/23 @ 1:48</strong></a></span></li>
+<li class="recent-comment"><span class="recent-comment-avatar"><img alt="User Avatar" src="./HC-05與HC-06藍牙模組補充說明（一） - 網昱多媒體_files/3ded6f1f06d42ba142f7e7ce17855b79(1)" srcset="http://0.gravatar.com/avatar/3ded6f1f06d42ba142f7e7ce17855b79?s=80&amp;d=retro&amp;r=g 2x" class="avatar avatar-40 photo" height="40" width="40"></span><span class="recent-comment-single"><span class="recent-comment-author">cubie</span><br><span class="recent-comment-text"> { 哦～那就不需要更新韌體了。 thanks, jeffrey } – </span> <a href="http://swf.com.tw/?p=874&amp;cpage=2#comment-964177" title="Comment on 超圖解物聯網IoT實作入門：使用JavaScript/Node.JS/Arduino/Raspberry Pi/ESP8266/Espruino"><br><strong>03/23 @ 1:45</strong></a></span></li>
+<li class="recent-comment"><span class="recent-comment-avatar"><img alt="User Avatar" src="./HC-05與HC-06藍牙模組補充說明（一） - 網昱多媒體_files/0fcda801e23ce6ed049ff788a5e385d1" srcset="http://0.gravatar.com/avatar/0fcda801e23ce6ed049ff788a5e385d1?s=80&amp;d=retro&amp;r=g 2x" class="avatar avatar-40 photo" height="40" width="40"></span><span class="recent-comment-single"><span class="recent-comment-author">YEH</span><br><span class="recent-comment-text"> { 手機端我有去下載 Bluetooth SPP 用此程式搜尋 也都搜尋不到 請老師替我解答 謝謝 } – </span> <a href="http://swf.com.tw/?p=712&amp;cpage=2#comment-964176" title="Comment on HC-05與HC-06藍牙模組補充說明（三）：使用Arduino設定AT命令"><br><strong>03/23 @ 0:12</strong></a></span></li>
+<li class="recent-comment"><span class="recent-comment-avatar"><img alt="User Avatar" src="./HC-05與HC-06藍牙模組補充說明（一） - 網昱多媒體_files/0fcda801e23ce6ed049ff788a5e385d1" srcset="http://0.gravatar.com/avatar/0fcda801e23ce6ed049ff788a5e385d1?s=80&amp;d=retro&amp;r=g 2x" class="avatar avatar-40 photo" height="40" width="40"></span><span class="recent-comment-single"><span class="recent-comment-author">YEH</span><br><span class="recent-comment-text"> { 老師你好 ，我照著你的程式範例操作 我的HC-05模組也進入AT模式，打開序列埠監控視窗後 輸入AT+NAME? 卻都沒反應。 為何用手機也無法搜尋到此藍芽模組 } – </span> <a href="http://swf.com.tw/?p=712&amp;cpage=2#comment-964175" title="Comment on HC-05與HC-06藍牙模組補充說明（三）：使用Arduino設定AT命令"><br><strong>03/23 @ 0:10</strong></a></span></li>
+<li class="recent-comment"><span class="recent-comment-avatar"><img alt="User Avatar" src="./HC-05與HC-06藍牙模組補充說明（一） - 網昱多媒體_files/b51a0d8ab2ec5b9b278cdfbc50eabc08" srcset="http://2.gravatar.com/avatar/b51a0d8ab2ec5b9b278cdfbc50eabc08?s=80&amp;d=retro&amp;r=g 2x" class="avatar avatar-40 photo" height="40" width="40"></span><span class="recent-comment-single"><span class="recent-comment-author">Kirney</span><br><span class="recent-comment-text"> { 可是老師，當我使用燒錄器並用RealTerm測試AT命令韌體時，卻ok了，請問這樣esp8266韌體應該就不用更新了吧？ 謝謝!! } – </span> <a href="http://swf.com.tw/?p=874&amp;cpage=2#comment-964174" title="Comment on 超圖解物聯網IoT實作入門：使用JavaScript/Node.JS/Arduino/Raspberry Pi/ESP8266/Espruino"><br><strong>03/22 @ 23:40</strong></a></span></li>
+<li class="recent-comment"><span class="recent-comment-avatar"><img alt="User Avatar" src="./HC-05與HC-06藍牙模組補充說明（一） - 網昱多媒體_files/3ded6f1f06d42ba142f7e7ce17855b79(1)" srcset="http://0.gravatar.com/avatar/3ded6f1f06d42ba142f7e7ce17855b79?s=80&amp;d=retro&amp;r=g 2x" class="avatar avatar-40 photo" height="40" width="40"></span><span class="recent-comment-single"><span class="recent-comment-author">cubie</span><br><span class="recent-comment-text"> { ESP8266 AT命令的韌體有不同版本，基本上我不使用AT命令韌體，而是直接使用Arduino程式開發。12-13頁的內容採用的AT韌體版本是0.95.2版，請參閱這則回應下載韌體再測試看看。 thanks, jeffrey } – </span> <a href="http://swf.com.tw/?p=874&amp;cpage=2#comment-964172" title="Comment on 超圖解物聯網IoT實作入門：使用JavaScript/Node.JS/Arduino/Raspberry Pi/ESP8266/Espruino"><br><strong>03/22 @ 17:35</strong></a></span></li>
+<li class="recent-comment"><span class="recent-comment-avatar"><img alt="User Avatar" src="./HC-05與HC-06藍牙模組補充說明（一） - 網昱多媒體_files/bd136046f59ecc4adaa444de7ba119c8" srcset="http://2.gravatar.com/avatar/bd136046f59ecc4adaa444de7ba119c8?s=80&amp;d=retro&amp;r=g 2x" class="avatar avatar-40 photo" height="40" width="40"></span><span class="recent-comment-single"><span class="recent-comment-author">Kirney</span><br><span class="recent-comment-text"> { 老師您好，今天測試的時候竟然又成功了， 但是從序列埠監控視窗at指令時出現: 5852186Serial is ready! 25325525225523725525523925563245249254 請問是甚麼原因呢?謝謝 } – </span> <a href="http://swf.com.tw/?p=874&amp;cpage=2#comment-964169" title="Comment on 超圖解物聯網IoT實作入門：使用JavaScript/Node.JS/Arduino/Raspberry Pi/ESP8266/Espruino"><br><strong>03/22 @ 14:02</strong></a></span></li>
+<li class="recent-comment"><span class="recent-comment-avatar"><img alt="User Avatar" src="./HC-05與HC-06藍牙模組補充說明（一） - 網昱多媒體_files/3ded6f1f06d42ba142f7e7ce17855b79(1)" srcset="http://0.gravatar.com/avatar/3ded6f1f06d42ba142f7e7ce17855b79?s=80&amp;d=retro&amp;r=g 2x" class="avatar avatar-40 photo" height="40" width="40"></span><span class="recent-comment-single"><span class="recent-comment-author">cubie</span><br><span class="recent-comment-text"> { 藍牙小車屬於被控制的「客戶端」，偵測藍牙連線是否中斷以及重新發起連線的工作在手機App上。假設你採用PhoneGap/Cordova編程，Cordova的BluetoothSerial插件的connect（連接）方法最後一個參數是「連接失敗回調函數」，亦即，該函數被調用時，就代表連線中斷了，你可以在該函數裡面做相應的處置。 thanks, jeffrey } – </span> <a href="http://swf.com.tw/?p=712&amp;cpage=2#comment-964167" title="Comment on HC-05與HC-06藍牙模組補充說明（三）：使用Arduino設定AT命令"><br><strong>03/22 @ 8:36</strong></a></span></li>
+<li class="recent-comment"><span class="recent-comment-avatar"><img alt="User Avatar" src="./HC-05與HC-06藍牙模組補充說明（一） - 網昱多媒體_files/7b622fab8214db6279d2503ce289cc70" srcset="http://1.gravatar.com/avatar/7b622fab8214db6279d2503ce289cc70?s=80&amp;d=retro&amp;r=g 2x" class="avatar avatar-40 photo" height="40" width="40"></span><span class="recent-comment-single"><span class="recent-comment-author">John</span><br><span class="recent-comment-text"> { 老師你好： 我想做一個藍牙控制小車，當藍牙連接斷線的時候自動連接，請問大致應該怎麼編程？ 配置是MEGA 2560，HC05模塊 } – </span> <a href="http://swf.com.tw/?p=712&amp;cpage=2#comment-964165" title="Comment on HC-05與HC-06藍牙模組補充說明（三）：使用Arduino設定AT命令"><br><strong>03/22 @ 0:59</strong></a></span></li>
+		</ul>
+</aside><aside id="categories-2" class="widget widget_categories"><h3 class="widget-title">文章分類</h3><label class="screen-reader-text" for="cat">文章分類</label><select name="cat" id="cat" class="postform form-control" style="display: inline-block;">
+	<option value="-1">選擇分類</option>
+	<option class="level-0" value="13">Adobe&nbsp;&nbsp;(22)</option>
+	<option class="level-0" value="17">Adobe ACA認證教材&nbsp;&nbsp;(17)</option>
+	<option class="level-0" value="9">CSS樣式表&nbsp;&nbsp;(8)</option>
+	<option class="level-0" value="1">Flash與ActionScript&nbsp;&nbsp;(49)</option>
+	<option class="level-0" value="19">iPhone / iPod Touch&nbsp;&nbsp;(4)</option>
+	<option class="level-0" value="18">Microsoft&nbsp;&nbsp;(13)</option>
+	<option class="level-0" value="4">動態網頁製作&nbsp;&nbsp;(22)</option>
+	<option class="level-0" value="14">哈玩意&nbsp;&nbsp;(6)</option>
+	<option class="level-0" value="2">改造遊樂器&nbsp;&nbsp;(27)</option>
+	<option class="level-0" value="3">教學文件&nbsp;&nbsp;(56)</option>
+	<option class="level-0" value="8">數位相機與攝影機&nbsp;&nbsp;(17)</option>
+	<option class="level-0" value="6">書籍堪誤&nbsp;&nbsp;(18)</option>
+	<option class="level-0" value="16">桌面應用程式&nbsp;&nbsp;(3)</option>
+	<option class="level-0" value="11">機器人&nbsp;&nbsp;(15)</option>
+	<option class="level-0" value="5">生活雜趣&nbsp;&nbsp;(17)</option>
+	<option class="level-0" value="15">硬體與DIY&nbsp;&nbsp;(130)</option>
+	<option class="level-0" value="10">行動裝置&nbsp;&nbsp;(46)</option>
+	<option class="level-0" value="7">課程資訊&nbsp;&nbsp;(4)</option>
+	<option class="level-0" value="12">麥金塔歲月&nbsp;&nbsp;(21)</option>
+</select>
+
+<script type="text/javascript">
+/* <![CDATA[ */
+(function() {
+	var dropdown = document.getElementById( "cat" );
+	function onCatChange() {
+		if ( dropdown.options[ dropdown.selectedIndex ].value > 0 ) {
+			location.href = "http://swf.com.tw/?cat=" + dropdown.options[ dropdown.selectedIndex ].value;
+		}
+	}
+	dropdown.onchange = onCatChange;
+})();
+/* ]]> */
+</script>
+
+</aside>		<aside id="recent-posts-4" class="widget widget_recent_entries">		<h3 class="widget-title">最新文章</h3>		<ul>
+					<li>
+				<a href="http://swf.com.tw/?p=997">從ESP8266連結Node.js並傳送JSON數據</a>
+						</li>
+					<li>
+				<a href="http://swf.com.tw/?p=986">《超圖解Arduino 互動設計入門》第三版內容更新說明</a>
+						</li>
+					<li>
+				<a href="http://swf.com.tw/?p=977">酷比魔方iWork 8旗艦版雙系統平板（二）：刪除Android分區、重新安裝Windows 10</a>
+						</li>
+					<li>
+				<a href="http://swf.com.tw/?p=974">更換Sony NEX-5控制轉盤模組、清潔CMOS感光元件以及硬式LCD面板保護殼</a>
+						</li>
+					<li>
+				<a href="http://swf.com.tw/?p=972">改造三星New Gear VR眼鏡，搭載Galaxy Note 4手機，變身電腦虛擬實境頭戴裝置！</a>
+						</li>
+					<li>
+				<a href="http://swf.com.tw/?p=968">酷比魔方iWork 8旗艦版雙系統平板（一）：更換6000mAh電池</a>
+						</li>
+					<li>
+				<a href="http://swf.com.tw/?p=965">建立可傳回多個數值（陣列）的Arduino（C語言）自訂函式</a>
+						</li>
+					<li>
+				<a href="http://swf.com.tw/?p=949">電容式觸控開關實驗（二）：觸控式LED調光器</a>
+						</li>
+					<li>
+				<a href="http://swf.com.tw/?p=946">電容式觸控開關實驗（一）：RC延時電路應用</a>
+						</li>
+					<li>
+				<a href="http://swf.com.tw/?p=941">Mifare RFID-RC522模組實驗（三）：讀取與寫入資料</a>
+						</li>
+				</ul>
+		</aside>				</div>
+	</div><!-- #secondary -->
+		</div><!-- close .row -->
+	</div><!-- close .container -->
+</div><!-- close .site-content -->
+
+	<div id="footer-area">
+		<div class="container footer-inner">
+			<div class="row">
+				
+	
+	<div class="footer-widget-area">
+				<div class="col-sm-4 footer-widget" role="complementary">
+			<div id="pages-4" class="widget widget_pages"><h3 class="widgettitle">分頁</h3>		<ul>
+			<li class="page_item page-item-20"><a href="http://swf.com.tw/?page_id=20">出版書籍</a></li>
+<li class="page_item page-item-3"><a href="http://swf.com.tw/?page_id=3">新書介紹</a></li>
+<li class="page_item page-item-2"><a href="http://swf.com.tw/?page_id=2">聯繫資訊</a></li>
+<li class="page_item page-item-9"><a href="http://swf.com.tw/?page_id=9">課程資訊</a></li>
+		</ul>
+		</div>		</div><!-- .widget-area .first -->
+		
+		
+			</div>			</div>
+		</div>
+
+		<footer id="colophon" class="site-footer" role="contentinfo">
+			<div class="site-info container">
+				<div class="row">
+										<nav role="navigation" class="col-md-6">
+											</nav>
+					<div class="copyright col-md-6">
+						sparkling						Theme by <a href="http://colorlib.com/" target="_blank">Colorlib</a> Powered by <a href="http://wordpress.org/" target="_blank">WordPress</a>					</div>
+				</div>
+			</div><!-- .site-info -->
+			<div class="scroll-to-top" style="display: block;"><i class="fa fa-angle-up"></i></div><!-- .scroll-to-top -->
+		</footer><!-- #colophon -->
+	</div>
+</div><!-- #page -->
+
+  <script type="text/javascript">
+    jQuery( document ).ready( function( $ ){
+      if ( $( window ).width() >= 767 ){
+        $( '.navbar-nav > li.menu-item > a' ).click( function(){
+            if( $( this ).attr('target') !== '_blank' ){
+                window.location = $( this ).attr( 'href' );
+            }else{
+                var win = window.open($( this ).attr( 'href' ), '_blank');
+                win.focus();
+            }
+        });
+      }
+    });
+  </script>
+<!-- This site uses the Better Analytics plugin.  https://marketplace.digitalpoint.com/better-analytics.3354/item -->
+<script type="text/javascript" src="./HC-05與HC-06藍牙模組補充說明（一） - 網昱多媒體_files/loader.php"></script><meta id="ba_s" property="options" content="" data-o="{&quot;tid&quot;:&quot;UA-4196756-1&quot;,&quot;co&quot;:&quot;auto&quot;,&quot;g&quot;:68456,&quot;dl&quot;:&quot;\\.avi|\\.doc|\\.exe|\\.gz|\\.mpg|\\.mp3|\\.pdf|\\.ppt|\\.psd|\\.rar|\\.wmv|\\.xls|\\.zip&quot;,&quot;s&quot;:0,&quot;a&quot;:0}">	
+<!-- Smilies package, WordPress Smilies, courtesy of Matt Read (http://mattread.com/) -->
+<script type="text/javascript" src="./HC-05與HC-06藍牙模組補充說明（一） - 網昱多媒體_files/skip-link-focus-fix.js.下載"></script>
+<script type="text/javascript" src="./HC-05與HC-06藍牙模組補充說明（一） - 網昱多媒體_files/comment-reply.min.js.下載"></script>
+<script type="text/javascript" src="./HC-05與HC-06藍牙模組補充說明（一） - 網昱多媒體_files/wp-embed.min.js.下載"></script>
+
+
+</body></html>
